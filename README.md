@@ -114,11 +114,12 @@ backend-rootfolder/
 
 
 # Software Versions
-* tailwindcss: version 4.1.13 
+* tailwindcss: version 4.1.13 (change to v3)
   - use command: npm install -D tailwindcss postcss autoprefixer
+  - to reinstall previous version : npm install -D tailwindcss@3 postcss autoprefixer
 
 * React: version 19.1.1 
-* NodeJs: version 18+ , then npm === v10
+* NodeJs: version 18+ , then npm === v10 (Install node v20)
 
 
 # How to run project
@@ -135,7 +136,7 @@ backend-rootfolder/
   - Link: N/A
 
 # Versioning
-* The current version is **0.1.0 (initial development)**.
+* The current version is **0.2.0 (initial development)**.
 * Future updates will be documented in the [Changelog](./CHANGELOG.md).
 
 
