@@ -5,9 +5,10 @@
 .navbar{
     /* setting the container styles */
     background-color: #ffffff;
+    position: fixed;
     width: 100%;
-    border-bottom: 1px solid #eaeaea ;
-    box-shadow: 0px 4px 0px 0px #ededed;
+    border-bottom: 1px solid lightgray ;
+    box-shadow: 0px 3px 0px 0px #ededed;
 }
 
 .text-gray{
@@ -15,6 +16,81 @@
 }
 
 .text-hover-gold:hover{
-    color: gold;
+    color: #d6b049;
     cursor: pointer;
+}
+
+/* Changes buttons width */
+.btn-w-20{width: 20px;}.btn-w-40{width:40px;}.btn-w-80{width:80px;}.btn-w-100{width:100px;}
+.btn-w-150{width: 150px;}
+/* Styles for button types */
+/* Button type 1 */
+.btn-type-1{
+    color: #d6b049;
+    padding: 10px;
+
+}
+.btn-type-1:hover{
+    cursor: pointer;
+    background-color: #f1f3f4;
+    border-radius: 6px;
+}
+
+/* Button type 2 */
+.btn-type-2{
+    color: #d6b049;
+    padding: 10px;
+    border: solid lightgrey 1px;
+    border-radius: 6px;
+
+}
+.btn-type-2:hover{
+    cursor: pointer;
+    background-color: #f1f3f4;
+    border: solid #d6b049 1px;
+    border-radius: 6px;
+}
+
+/* Button type 3 */
+.btn-type-3{
+    color: white;
+    padding: 10px;
+    border: solid lightgrey 1px;
+    background-color: #d6b049;
+    border-radius: 6px;
+
+}
+.btn-type-3:hover{
+    cursor: pointer;
+    background-color: #c1982b;
+    border: solid #d6b049 1px;
+    border-radius: 6px;
+}
+
+/* Changes the size of the KBS Logo */
+.logo-size{
+    width: 3rem;
+}
+
+#logoText{
+    padding-top: 5px;
+    font-size: x-large;
+    color: gray;
+}
+
+
+.btn-w-150{width: 150px;}
+/* Styles for nav items */
+.nav-item{
+    color: gray;
+    padding: 10px;
+
+}
+.nav-item:hover{
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#main_column{
+    gap: 20px;
 }
