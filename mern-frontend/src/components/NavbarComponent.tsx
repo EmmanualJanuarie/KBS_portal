@@ -1,3 +1,6 @@
+import ButtonComponent from "./ButtonComponent"
+import LogoComponent from "./LogoComponent"
+
 /**
  * Contains the set tailwind layout structure for the navbar.
  * 
@@ -7,37 +10,35 @@
 
 export default function NavbarComponent(){
     return(
-       <>
-        <div className="container px-10">
-            <div className="flex flex-row gap-80">
+       <div className="w-full px-4 py-4">
+        <div className="flex flex-col md:flex-row items-center justify-between" id="main_column">
 
-                <div className="basis-1/2">
-                {/* First column section */}
-
-                    <div className="flex flex-row">
-                        <div className="basis-1/3"> KBS Logo</div>
-                        {/* Inner first column*/}
-                        <div className="flex flex-row gap-7">
-                            <div className="basis-1/2 text-gray text-hover-gold">item1</div>
-                            <div className="basis-1/2 text-gray text-hover-gold">item2</div>
-                            <div className="basis-1/2 text-gray text-hover-gold">item3</div>
-                            <div className="basis-1/2 text-gray text-hover-gold">item4</div>
-                        </div>
-
-                    </div>
-                </div>
-                <div className="basis-1/2">
-                
-                    {/* Second column section */}
-                    <div className="flex flex-row gap-24">
-                        <div>Admin Console</div>
-                        <div>Contact Staff</div>
-                        <div>SignIn</div>
-                    </div>
-                    
-                </div>
+            {/* LEFT SIDE */}
+            <div className="flex items-center gap-8 w-full md:w-1/2">
+            {/* Logo */}
+            <div className="shrink-0">
+                <LogoComponent setSRC="/src/assets/images/KBS_Logo.jpg" setClassName="logo-size" />
             </div>
+
+            {/* Nav Items */}
+            <div className="hidden md:flex gap-6">
+                <div className="text-gray text-hover-gold nav-item">Courses</div>
+                <div className="text-gray text-hover-gold nav-item">About</div>
+                <div className="text-gray text-hover-gold nav-item">Testimonials</div>
+                <div className="text-gray text-hover-gold nav-item">Guide</div>
+            </div>
+            </div>
+
+            
+
+            {/* RIGHT SIDE */}
+            <div className="flex gap-4 justify-end w-full md:w-1/2">
+                <ButtonComponent name="Admin console" setClassName="btn-type-1" />
+                <ButtonComponent name="Contact staff" setClassName="btn-type-2" />
+                <ButtonComponent name="SignIn" setClassName="btn-type-3 btn-w-150" />
+            </div>
+
         </div>
-       </>
+       </div>
     )
 }
