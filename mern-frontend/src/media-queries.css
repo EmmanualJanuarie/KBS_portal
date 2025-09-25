@@ -1,0 +1,11 @@
+@media (min-width: 768px) {
+  .md\:hidden { display: none; }
+  .md\:flex { display: flex; }
+
+  .navItemModal{
+    position: relative;
+    top: 2200px;
+    font-size: 2000px;
+  }
+}
+
