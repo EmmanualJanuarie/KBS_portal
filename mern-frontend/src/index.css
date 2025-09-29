@@ -9,7 +9,7 @@
     width: 100%;
     border-bottom: 1px solid lightgray ;
     box-shadow: 0px 3px 0px 0px #ededed;
-    z-index: 1;
+    z-index: 10;
 }
 
 .text-gray{
@@ -108,7 +108,7 @@
 /* Placement of the hero component */
 .hero{
     position: relative;
-    top:30vh;
+    top:25vh;
 }
 
 /* Styling the the hero component */
@@ -146,6 +146,47 @@
     text-align: center;
 }
 
+/* Course modal styling */
+.courseModal{
+    z-index: 100;
+}
+
+.course-header{
+    color: #d6b049;
+}
+
 /* hidding any container  - for tailwind #FIX*/ 
 .flex { display: flex; }
 .hidden { display: none; }
+
+
+/* Styles for the Courses */
+.card-outer-border{
+    border: #d3d3d3 solid 1px;
+    border-radius: 15px;
+}
+
+picture{
+    background-color: red;
+    border-radius: 10px;
+}
+
+.card-tag{
+   border-radius: 10px; 
+   background-color: white;
+   width: 26%;
+}
+
+.card-width{
+    width: 25rem;
+}
+
+/* Creating class to set element or container to gray */
+.set-to-gray{
+    background-color: #f1f3f4;
+}
+ 
+.font-to-gray{
+    color: gray;
+}
+
