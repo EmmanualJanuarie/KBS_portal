@@ -8,7 +8,13 @@ import LogoComponent from "./LogoComponent"
  * @returns Tailwind layout for navbar 
  */
 
-export default function NavbarComponent(){
+type courseListProps = {
+    toggleList: boolean,
+    setToggleList: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function NavbarComponent({toggleList, setToggleList}: courseListProps){
+
     return(
        <div className="w-full px-4 py-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
@@ -22,7 +28,10 @@ export default function NavbarComponent(){
 
             {/* Nav Items */}
             <div className="md:flex md:flex-row gap-2">
-                <div className="text-gray text-hover-gold nav-item">Courses</div>
+                <div className="text-gray text-hover-gold nav-item" 
+                    onClick={() => setToggleList(!toggleList)}>
+                    Courses
+                </div>
                 <div className="text-gray text-hover-gold nav-item">About</div>
                 <div className="text-gray text-hover-gold nav-item">Testimonials</div>
                 <div className="text-gray text-hover-gold nav-item">Guide</div>
