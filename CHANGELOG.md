@@ -1,4 +1,14 @@
 # Changelog
+## [0.6.1] - 2025-09-29
+### Improvement: Vertical carousel movemnets has been changed, added a smooth movement, by configuring the swiper speed.
+
+## [0.6.0] - 2025-09-29
+### Added course modal, with highlight effect
+### Added Course card to the course modal for each course
+
+## [0.5.2] - 2025-09-26
+### Fixed: Spacing in the hero section, no more dead space
+
 ## [0.5.1] - 2025-09-25
 ### Fixed: non-responsive Hamburger modal Items
 
