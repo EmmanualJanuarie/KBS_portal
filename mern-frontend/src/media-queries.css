@@ -9,3 +9,9 @@
   }
 }
 
+@media (max-width: 768px) {
+    .md-max\:top-20 {
+        top: 5rem /* 80px */;
+    }
+}
+
