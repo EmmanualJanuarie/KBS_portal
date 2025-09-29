@@ -35,10 +35,12 @@ export default function VerticalCarouselComponent({setClassName, reverseDirectio
     return(
         <Swiper
   loop={true}
+  speed={1200}
   autoplay={{
-    delay: 2000,
+    delay: 1500,
     disableOnInteraction: true,
-    reverseDirection
+    reverseDirection,
+    
   }}
   modules={[Autoplay]}
   breakpoints={{
