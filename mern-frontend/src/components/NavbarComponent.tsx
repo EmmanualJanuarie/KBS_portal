@@ -8,13 +8,12 @@ import LogoComponent from "./LogoComponent"
  * @returns Tailwind layout for navbar 
  */
 
-type courseListProps = {
-    toggleList: boolean,
+type navbarProps = {
+    toggleList : boolean,
     setToggleList: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function NavbarComponent({toggleList, setToggleList}: courseListProps){
-
+export default function NavbarComponent({toggleList, setToggleList}: navbarProps){
     return(
        <div className="w-full px-4 py-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
@@ -23,12 +22,12 @@ export default function NavbarComponent({toggleList, setToggleList}: courseListP
             <div className="flex items-center gap-8 w-full md:flex-1">
             {/* Logo */}
             <div className="shrink-0">
-                <LogoComponent setSRC="/src/assets/images/KBS_Logo.jpg" setClassName="logo-size" />
+                <LogoComponent setSRC="/src/assets/images/logos/KBS_Logo.jpg" setClassName="logo-size" />
             </div>
 
             {/* Nav Items */}
             <div className="md:flex md:flex-row gap-2">
-                <div className="text-gray text-hover-gold nav-item" 
+                <div className={`nav-item ${toggleList ? "color-gold" : "text-gray"} text-hover-gold`} 
                     onClick={() => setToggleList(!toggleList)}>
                     Courses
                 </div>
