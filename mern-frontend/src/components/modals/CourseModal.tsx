@@ -5,54 +5,54 @@
      * @returns Tailwind layout for course list
      */
 
+    import { Swiper, SwiperSlide } from "swiper/react";
+    import { Autoplay, Navigation } from "swiper/modules";
+    import 'swiper/css'
+    import 'swiper/css/navigation'
     import CourseCardComponent from "../CourseCardComponent";
 
-    // Object for the courses description
-    const courses = {
-        customerService:{
-            img: "/src/assets/images/KBS_Logo.jpg",
-            category: "Corporate",
-            heading: "Customer Service",
-            des: {
-                heading: "Build a Professional Image with Exceptional Customer Service Skills",
-                subHeading: "Learn how to communicate with confidence, handle challenges, with ease, and create experiences that keep customers coming back."
-            }
-        },
 
-        financialLiteracy:{
-            img: "image here",
-            category: "Corporate",
-            heading: "Financial Literacy",
-            des: {
-                    heading: "Master your money with Essential Financial Literacy Skills.",
-                    subHeading: "Gain the knowledge to budget smart, maange debt, and build long-term wealth with confidence."
-            }
-        },
-        interviewPreparation:{
-            img: "image here",
-            category: "Work Shop",
-            heading: "Interview Preparation",
-            des: {
-                    heading: "Interview Preparation Workshop: Master Confidence and Communication",
-                    subHeading: "Practice real interview scenarios, sharpen your responses, and build the confidence to impress any employer."
-            } 
-        },
-        workplaceEtiquette:{
-            img: "image here",
-            category: "Work Shop",
-            heading: "Workplace Etiquette",
-            des: {
-                    heading: "Master Professional Etiquette for a Respectful and Thriving Workplace",
-                    subHeading: "Learn essential workplace behaviors, communication styles, and professional practices that foster respect, teamwork, and career growth."
-            } 
-        }
+    // Creates/ assigns datatypes to objects
+    interface Course {
+        title: string, category: string,
+        heading: string, subHeading: string,
+        image: string
     }
+
+    // Object for the courses description
+    const courses: Course[]= [
+        { title: "Customer Service", category: "Corporate", 
+          heading: "Build a Professional Image with Strong Customer Service Skills",
+          subHeading: "Learn customer-focused communication, problem-solving, and service skills that build trust, loyalty, and lasting relationships.",
+          image: "/src/assets/images/stickers/customer_service.png"    
+        },
+        { title: "Financial Literacy", category: "Corporate", 
+          heading: "Master your money with Essential Financial Literacy Skills.",
+          subHeading: "Gain the knowledge to budget smart, maange debt, and build long-term wealth with confidence.",
+          image: "/src/assets/images/stickers/financial_Literacy.png"    
+        },
+        { title: "Interview Preparation", category: "Work Shop", 
+          heading: "Workshop: Master Confidence and Communication",
+          subHeading: "Practice real interview scenarios, sharpen your responses, and build the confidence to impress any employer.",
+          image: "/src/assets/images/stickers/interview_prep.png"    
+        },
+        { title: "Workplace Etiquette", category: "Work Shop", 
+          heading: "Master Professional Etiquette for a Respectful and Thriving Workplace",
+          subHeading: "Learn key workplace habits, communication skills, and professional practices that build respect, teamwork, and career success.",
+          image: "/src/assets/images/stickers/workplace_etiquette.png"    
+        },
+        { title: "CV Drafting", category: "Work Shop", 
+          heading: "Hands-On CV Drafting Workshop: Build Your Career-Ready Resume",
+          subHeading: "Work step-by-step to create a polished CV that impresses employers and increases your interview opportunities.",
+          image: "/src/assets/images/stickers/cv_drafting.png"    
+        }
+    ] 
 
     type courseModalProps ={
         setClassName: string
         isOpen: boolean
     }
-    export default function CourseModal({setClassName,isOpen}: courseModalProps){
+    export default function CourseModal({isOpen}: courseModalProps){
 
         return(
             <div className={`transform transition-all duration-500 ease-in-out
@@ -63,15 +63,60 @@
                     </div>
                 </div>
 
-                <div className="flex w-full py-2 px-2 gap-12 justify-center">
-                    <CourseCardComponent setCategory={courses.customerService.category}
-                                         setSRC={courses.customerService.img}
-                                         setCourseTitle={courses.customerService.heading} 
-                                         setHeading={courses.customerService.des.heading}   
-                                         setSubHeading={courses.customerService.des.subHeading}
-                    />
+                <div className="flex w-full py-5 px-5 gap-12 justify-center">
+                    <Swiper
+                        loop={true}
+                        speed={1200}
+                        autoplay={{
+                            delay: 3500,
+                            disableOnInteraction: false,
+                        }}
+                        navigation={true}
+                        modules={[Autoplay, Navigation]}
+                        breakpoints={{
+                            320: {
+                            slidesPerView: 1,
+                            spaceBetween: 12,
+                            },
+                            640: {
+                            slidesPerView: 1,
+                            spaceBetween: 16,
+                            },
+                            768: {
+                            slidesPerView: 2,
+                            spaceBetween: 10,
+                            },
+                            800: {
+                            slidesPerView: 2,
+                            spaceBetween: 10,
+                            },
+                            1024: {
+                            slidesPerView: 3, // ✅ show 4 on laptop/desktop
+                            spaceBetween: 24,
+                            },
+                            1500: {
+                            slidesPerView: 4, // ✅ show 4 on laptop/desktop
+                            spaceBetween: 24,
+                            },
+                        }}
+                        className="max-w-full"
+                        >
+                            {courses.map((course, index) =>(
+                                <SwiperSlide 
+                                  key={index}
+                                  className=""
+                                >
+                                    <CourseCardComponent 
+                                        setCourseTitle={course.title} setCategory={course.category}
+                                        setHeading={course.heading} setSubHeading={course.subHeading}
+                                        setSRC={course.image}
+                                    />
+                                </SwiperSlide>
+                            ))}
+                    </Swiper>
+                    
                 </div>
             </div>
         );
 
-    }
+    } 
