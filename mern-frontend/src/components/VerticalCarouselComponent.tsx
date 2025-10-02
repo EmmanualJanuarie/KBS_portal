@@ -51,7 +51,7 @@ export default function VerticalCarouselComponent({setClassName, reverseDirectio
     },
     640: {
       direction: "horizontal",
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 16,
     },
     768: {
@@ -59,11 +59,21 @@ export default function VerticalCarouselComponent({setClassName, reverseDirectio
       slidesPerView: 1,
       spaceBetween: 16,
     },
+    700: {
+      direction: "vertical",
+      slidesPerView: 1, // ✅ show 3 on laptop/desktop
+      spaceBetween: 24,
+    },
     1024: {
       direction: "vertical",
-      slidesPerView: 4,
-      spaceBetween: 20,
+      slidesPerView: 3, // ✅ show 3 on laptop/desktop
+      spaceBetween: 24,
     },
+    1500: {
+      direction: "vertical",
+      slidesPerView: 4,
+      spaceBetween: 20
+    }
   }}
   className={`${setClassName} max-w-md md:max-w-full`}
 >
