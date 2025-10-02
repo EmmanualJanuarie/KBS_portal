@@ -8,16 +8,21 @@
 import ButtonComponent from "../ButtonComponent";
 
 type HamburgerNavItemsModalProps = {
-    setClassName: string
+    setClassName: string,
+    toggleList: boolean,
+    setToggleList: React.Dispatch<React.SetStateAction<boolean>>;
 }
-export default function HamburgerNavItemsModal({setClassName}: HamburgerNavItemsModalProps){
+export default function HamburgerNavItemsModal({setClassName, toggleList, setToggleList}: HamburgerNavItemsModalProps){
     return(
         <div className={setClassName}>
             <div className="flex flex-col md:flex-row gap-0 justify-center">
                 {/* MOBILE ITEM 1 */}
                 <div className="flex items-center gap-20 w-full md:flex-1">
                     <div className="flex md:hidden px-2 py-3 items-center">
-                        <div className="text-gray text-hover-gold nav-item">Courses</div>
+                        <div className={`nav-item ${toggleList ? "color-gold" : "text-gray"} text-hover-gold`} 
+                            onClick={() => setToggleList(!toggleList)}>
+                            Courses
+                        </div>
                     </div>
                 </div>
                 {/* MOBILE ITEM 2 */}
