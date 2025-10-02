@@ -1,21 +1,32 @@
 /**
- * Contains the tsx script for the Icon Component layout
- * @function IconComponent
- * @returns TSX script for the Icon Component
+ * Displays an icon
+ * @funtion IconComponent
+ * @returns tsx layout for the Icon Component
  */
 
-type iconComponentProps = {
-    setSRC: string,
-    setAlt: string,
-    setClassName: string
-}
+import { useState } from "react";
 
-export default function IconComponent({setSRC, setAlt, setClassName}: iconComponentProps){
+type iconComponentProps ={
+    defaultSRC: string,
+    setClassName: string,
+    onHoverSRC: string
+    setLink: string
+}
+export default function IconComponent({defaultSRC, setClassName, onHoverSRC, setLink}: iconComponentProps){
+    const [icon, setIcon] = useState(defaultSRC);
+
     return (
-        <>
+        <div className="shrink-0">
             <picture>
-                <img src={setSRC} alt={setAlt} className={setClassName}/>
+                <a href={setLink}>
+                    <img src={icon} alt="Icon" className={setClassName} 
+                    onMouseEnter={()=> setIcon(onHoverSRC)}
+                    onMouseLeave={()=> setIcon(defaultSRC)}
+                    />
+                </a>
             </picture>
-        </>
+        </div>
+        
     );
+
 }
