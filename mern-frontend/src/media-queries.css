@@ -13,5 +13,9 @@
     .md-max\:top-20 {
         top: 5rem /* 80px */;
     }
+
+    .business_pic{
+      padding-top: 5rem;
+    }
 }
 
