@@ -24,7 +24,7 @@ export default function HamburgerMenuComponent({toggle, setToggle}: HamburgerMen
                     <div className="flex items-center gap-20 w-full md:flex-1">
                         {/* LOGO */}
                         <div className="shrink-0">
-                            <LogoComponent setSRC="/src/assets/images/KBS_Logo.jpg" setClassName="logo-size" />
+                            <LogoComponent setSRC="/src/assets/images/logos/KBS_Logo.jpg" setClassName="logo-size" />
                         </div>
 
                         {/* HAMBURGER ICON */}
