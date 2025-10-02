@@ -11,13 +11,13 @@ import { useEffect, useState } from "react";
 
 // used for the hover effects of the hamburger icons
 const hamburgerIcons = {
-    grayIcon: "/src/assets/images/hamburger_gray_icon_toggle.png",
-    goldIcon: "/src/assets/images/hamburger_gold_icon_toggle.png",
+    grayIcon: "/src/assets/images/icons/hamburger_gray_icon_toggle.png",
+    goldIcon: "/src/assets/images/icons/hamburger_gold_icon_toggle.png",
 }
 
 // used for effects and close modal icons
 const closeIcons = {
-    closeGoldIcon: "/src/assets/images/close_gold.png"
+    closeGoldIcon: "/src/assets/images/icons/close_gold.png"
 
 }
 
