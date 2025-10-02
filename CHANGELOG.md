@@ -1,4 +1,28 @@
 # Changelog
+## [0.9.1] - 2025-10-02
+### Fixed: Non-responsive About us Section
+
+## [0.9.0] - 2025-10-02
+### Added a testimonials section in the landing page
+### Issue: The course modal has sub par height (does not fit entire screen)
+### Issue: Dead space at the testimonials (between the rating, feedback and user fullname)
+
+## [0.8.0] - 2025-10-01
+### Added an about us section
+### Added a divider component to the landing page
+### Issue: Non-responsive About us Section (Mobile device res)
+
+## [0.7.2] - 2025-10-01
+### Fixed: Mobile responsiveness for courses, and onClick for mobile works.
+
+## [0.7.1] - 2025-09-30
+### Fixed: Non-responsiveness of the course modal
+
+## [0.7.0] - 2025-09-30
+### Improvement: Hover effect is more smoother and responsive
+### Issue: Non-responsive Course Modal 
+### Issue: on mobile resolutions courses does not function - onclick
+
 ## [0.6.1] - 2025-09-29
 ### Improvement: Vertical carousel movemnets has been changed, added a smooth movement, by configuring the swiper speed.
 
