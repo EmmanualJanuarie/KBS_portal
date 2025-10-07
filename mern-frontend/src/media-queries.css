@@ -19,3 +19,20 @@
     }
 }
 
+@media (min-width: 1024px) {
+    .lg\:gap-28 {
+        gap: 7rem /* 112px */;
+    }
+
+    .lg\:gap-6-5{
+      gap: 6.5rem;
+    }
+}
+
+@media (min-width: 340px) {
+    #socials , #icons{
+        display: flex;
+
+    }
+}
+
