@@ -68,7 +68,7 @@ interface Client {
                             spaceBetween: 10,
                             },
                             1024: {
-                            slidesPerView: 12, // ✅ show 4 on laptop/desktop
+                            slidesPerView: 1, // ✅ show 4 on laptop/desktop
                             spaceBetween: 24,
                             },
                             1500: {
