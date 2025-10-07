@@ -31,9 +31,9 @@ export default function NavbarComponent({toggleList, setToggleList}: navbarProps
                     onClick={() => setToggleList(!toggleList)}>
                     Courses
                 </div>
-                <div className="text-gray text-hover-gold nav-item">About</div>
-                <div className="text-gray text-hover-gold nav-item">Testimonials</div>
                 <div className="text-gray text-hover-gold nav-item">Guide</div>
+                <div className="text-gray text-hover-gold nav-item">Testimonials</div>
+                <div className="text-gray text-hover-gold nav-item">FAQs</div>
             </div>
             </div>
 
