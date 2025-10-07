@@ -4,9 +4,12 @@ import HamburgerMenuComponent from "../src/components/HamburgerMenuComponent";
 import HamburgerNavItemsModal from "../src/components/modals/HamburgerNavItemsModal";
 import { useState } from "react";
 import CourseModal from "../src/components/modals/CourseModal";
-import AboutUsComponent from "../src/components/AboutUsComponent";
+import GuideComponent from "../src/components/GuideComponent";
 import DividerComponent from "../src/components/DividerComponent";
 import TestimonialsComponent from "../src/components/TestimonialComponent";
+import FAQsComponent from "../src/components/FAQsComponent";
+import FooterComponent from "../src/components/FooterComponent";
+import MobileFooterComponent from "../src/components/MobileFooterComponent";
 /**
  * Fabricates the landing page and it's features 
  * @function LandingPage
@@ -50,13 +53,8 @@ export default function LandingPage(){
             </div>
 
             {/* ABOUT KBS PORTAL SECTION */}
-            <div className="aboutus">
-                <AboutUsComponent />
-            </div>
-
-            {/* DIVIDER */}
-            <div className="divider">
-                <DividerComponent />
+            <div className="guide">
+                <GuideComponent />
             </div>
 
             {/* TESTIMONIALS SECTION */}
@@ -64,14 +62,27 @@ export default function LandingPage(){
                 <TestimonialsComponent />
             </div>
 
-            {/* REPLACE WITH GUIDE SECTION */}
-            <div className="aboutus">
-                <AboutUsComponent />
+            {/*  FAQs SECTION */}
+            <div className="FAQs">
+                <FAQsComponent />
             </div>
+
             {/* DIVIDER */}
             <div className="divider">
                 <DividerComponent />
             </div>
+            
+             {/* FOOTER SECTION */}
+            <div className="footer">
+                <div className="hidden md:flex">
+                    <FooterComponent/> 
+                </div>
+
+                <div className="flex md:hidden">
+                    <MobileFooterComponent />
+                </div>
+            </div>
+            
 
             
         </>
