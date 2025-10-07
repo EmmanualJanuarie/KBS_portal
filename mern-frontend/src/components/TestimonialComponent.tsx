@@ -21,6 +21,5 @@ export default function TestimonialsComponent(){
                 </div>
             </div>
         </div>
-
     );
 }
