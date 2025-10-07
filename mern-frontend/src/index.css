@@ -12,6 +12,10 @@
     z-index: 10;
 }
 
+.border-bottom-1{
+    border-bottom: 1px solid lightgray;
+}
+
 .text-gray{
     color: gray;
 }
@@ -96,11 +100,23 @@
 .nav-item{
     color: gray;
     padding: 10px;
-
 }
 .nav-item:hover{
     cursor: pointer;
     border-radius: 6px;
+}
+
+.footer-items-padding-with-gray{
+    padding: 10px;
+    color: gray;
+}
+
+.footer-divider-w{
+    width: 42rem;
+}
+
+.footer-items-gap{
+    gap: 6.5rem;
 }
 
 
@@ -222,7 +238,7 @@ picture{
 }
 
 /* ABOUT US SECTION STYLING */
-.aboutus{
+.aboutus, .guide, .FAQs, .footer{
     position: relative;
     top:25rem;
 }
@@ -248,10 +264,9 @@ picture{
     position: relative;
     top:25rem;
     background-image: url('assets/images/backgrounds/kbs_background_3.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+   
 }
+
 
 /* HEADING EFFECT */
 .heading-background-effect-1 {
