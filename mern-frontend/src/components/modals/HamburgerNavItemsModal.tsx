@@ -28,7 +28,7 @@ export default function HamburgerNavItemsModal({setClassName, toggleList, setTog
                 {/* MOBILE ITEM 2 */}
                 <div className="flex items-center gap-0 w-full md:flex-1">
                     <div className="flex md:hidden px-2 py-3 items-center">
-                        <div className="text-gray text-hover-gold nav-item">About</div>
+                        <div className="text-gray text-hover-gold nav-item">Guide</div>
                     </div>
                 </div>
                  {/* MOBILE ITEM 3 */}
@@ -40,7 +40,7 @@ export default function HamburgerNavItemsModal({setClassName, toggleList, setTog
                 {/* MOBILE ITEM 3 */}
                 <div className="flex items-center gap-0 w-full md:flex-1">
                     <div className="flex md:hidden px-2 py-3 items-center">
-                        <div className="text-gray text-hover-gold nav-item">Guide</div>
+                        <div className="text-gray text-hover-gold nav-item">FAQs</div>
                     </div>
                 </div>
                 {/* MOBILE ITEM 4 */}
