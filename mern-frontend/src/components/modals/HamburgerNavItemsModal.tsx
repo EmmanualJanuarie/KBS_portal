@@ -6,6 +6,8 @@
  */
 
 import ButtonComponent from "../ButtonComponent";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../utils/routes";
 
 type HamburgerNavItemsModalProps = {
     setClassName: string,
@@ -13,6 +15,7 @@ type HamburgerNavItemsModalProps = {
     setToggleList: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export default function HamburgerNavItemsModal({setClassName, toggleList, setToggleList}: HamburgerNavItemsModalProps){
+    const navigate = useNavigate();
     return(
         <div className={setClassName}>
             <div className="flex flex-col md:flex-row gap-0 justify-center">
@@ -46,19 +49,23 @@ export default function HamburgerNavItemsModal({setClassName, toggleList, setTog
                 {/* MOBILE ITEM 4 */}
                 <div className="flex items-center gap-0 w-full md:flex-1">
                     <div className="flex md:hidden px-2 py-3 items-center">
-                        <ButtonComponent name="Admin console" setClassName="btn-type-2" />
+                        <ButtonComponent name="Admin console" setClassName="btn-type-2" setOnClick={()=>{
+                    setTimeout(()=>{
+                         navigate(ROUTES.ADMIN_PAGE);
+                    }, 800)
+                }} />
                     </div>
                 </div>
                 {/* MOBILE ITEM 5 */}
                 <div className="flex items-center gap-0 w-full md:flex-1">
                     <div className="flex md:hidden px-2 py-3 items-center">
-                        <ButtonComponent name="Contact staff" setClassName="btn-type-2" />
+                        <ButtonComponent name="Contact staff" setClassName="btn-type-2" setOnClick={() => navigate(ROUTES.CONTACT_STAFF_PAFE)} />
                     </div>
                 </div>
                 {/* MOBILE ITEM 6 */}
                 <div className="flex items-center gap-0 w-full md:flex-1">
                     <div className="flex md:hidden px-2 py-3 items-center">
-                        <ButtonComponent name="SignIn" setClassName="btn-type-3 btn-w-150" />
+                        <ButtonComponent name="SignIn" setClassName="btn-type-3 btn-w-150" setOnClick={() => navigate(ROUTES.USER_PAGE)}/>
                     </div>
                 </div>
             </div>
