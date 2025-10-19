@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import ButtonComponent from "./ButtonComponent"
 import LogoComponent from "./LogoComponent"
+import { ROUTES } from "../../utils/routes";
 
 /**
  * Contains the set tailwind layout structure for the navbar.
@@ -14,6 +16,9 @@ type navbarProps = {
 }
 
 export default function NavbarComponent({toggleList, setToggleList}: navbarProps){
+
+    const navigate = useNavigate();
+
     return(
        <div className="w-full px-4 py-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
@@ -41,9 +46,13 @@ export default function NavbarComponent({toggleList, setToggleList}: navbarProps
 
             {/* RIGHT SIDE */}
             <div className="flex gap-4 justify-end w-full">
-                <ButtonComponent name="Admin console" setClassName="btn-type-1" />
-                <ButtonComponent name="Contact staff" setClassName="btn-type-2" />
-                <ButtonComponent name="SignIn" setClassName="btn-type-3 btn-w-150" />
+                <ButtonComponent name="Admin console" setClassName="btn-type-1" setOnClick={()=>{
+                    setTimeout(()=>{
+                         navigate(ROUTES.ADMIN_PAGE);
+                    }, 800)
+                }}/>
+                <ButtonComponent name="Contact staff" setClassName="btn-type-2" setOnClick={() => navigate(ROUTES.CONTACT_STAFF_PAFE)} />
+                <ButtonComponent name="SignIn" setClassName="btn-type-3 btn-w-150" setOnClick={() => navigate(ROUTES.USER_PAGE)} />
             </div>
 
         </div>
