@@ -136,7 +136,7 @@ backend-rootfolder/
   - Link: N/A
 
 # Versioning
-* The current version is **0.9.1 (initial development)**.
+* The current version is **0.14.0 (initial development)**.
 * Future updates will be documented in the [Changelog](./CHANGELOG.md).
 
 # Notes For future developers
