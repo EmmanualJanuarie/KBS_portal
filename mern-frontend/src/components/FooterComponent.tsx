@@ -15,16 +15,16 @@ export default function FooterComponent(){
 
                 <div className="lg:flex lg:flex-row md:flex md:flex-row sm:flex sm:flex-row lg:gap-20 md:gap-20 sm:gap-10" id="icons">
                     <div className="nav-item shrink-0">
-                        <IconComponent defaultSRC={socials.x} setLink="x.com/kbs" onHoverSRC={socials.x} setClassName="w-9"/>
+                        <IconComponent defaultSRC={socials.x} link="x.com/kbs" isLinkActive={true} onHoverSRC={socials.x} setClassName="w-9"/>
                     </div>
                     <div className="nav-item shrink-0">
-                        <IconComponent defaultSRC={socials.instagram} setLink="x.com/kbs" onHoverSRC={socials.instagram} setClassName="w-9"/>
+                        <IconComponent defaultSRC={socials.instagram} link="x.com/kbs" isLinkActive={true} onHoverSRC={socials.instagram} setClassName="w-9"/>
                     </div>
                     <div className="nav-item shrink-0">
-                        <IconComponent defaultSRC={socials.tiktok} setLink="x.com/kbs" onHoverSRC={socials.tiktok} setClassName="w-9"/>
+                        <IconComponent defaultSRC={socials.tiktok} link="x.com/kbs" isLinkActive={true} onHoverSRC={socials.tiktok} setClassName="w-9"/>
                     </div>
                     <div className="nav-item shrink-0">
-                        <IconComponent defaultSRC={socials.linkedin} setLink="x.com/kbs" onHoverSRC={socials.linkedin} setClassName="w-9"/>
+                        <IconComponent defaultSRC={socials.linkedin} link="x.com/kbs" isLinkActive={true} onHoverSRC={socials.linkedin} setClassName="w-9"/>
                     </div>
                 </div>
                 
