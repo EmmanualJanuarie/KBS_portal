@@ -1,5 +1,7 @@
 import ButtonComponent from "./ButtonComponent";
 import VerticalCarouselComponent from "./VerticalCarouselComponent";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../utils/routes";
 
 /**
  * Contains the set tailwind layout structure for the hero section.
@@ -7,12 +9,15 @@ import VerticalCarouselComponent from "./VerticalCarouselComponent";
  * @function HeroComponent
  * @returns Tailwind layout for hero component 
  */
+
 export default function HeroComponent(){
+  const navigate = useNavigate(); 
+  
     return(
         <div className="w-full">
   <div className="flex flex-col md:flex-row justify-center items-center">
     {/* LEFT COLUMN */}
-    <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+    <div className="w-full lg:w-1/2  flex justify-center md:justify-start">
       <div className="text-center md:text-left max-w-lg mx-auto">
         <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold">Your Corporate & Entrepreneurial Growth Portal</h1>
         <h2 className="text-sm md:text-base lg:text-lg text-gray-600 py-2">
@@ -20,7 +25,7 @@ export default function HeroComponent(){
           workshops, and actionable learning insights for measurable success.
         </h2>
         <div className="mt-6">
-          <ButtonComponent name="Get Started" setClassName="btn-type-3" />
+          <ButtonComponent name="Get Started" setClassName="btn-type-3" setOnClick={() => navigate(ROUTES.USER_PAGE)} />
         </div>
       </div>
     </div>
