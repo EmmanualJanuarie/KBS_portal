@@ -157,7 +157,7 @@ _Minor patch improving the responsiveness of the vertical carousel component._
 
 ## [0.3.0] - 2025-09-18
 ### Added
--Hero section in Landing page
+- Hero section in Landing page
 
 ### Known Issues
 - nav-item (Guide) ~ style not taking effect
