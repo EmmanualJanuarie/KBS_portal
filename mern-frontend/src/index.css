@@ -289,3 +289,129 @@ picture{
 .rating-size{
     width: 10rem;
 }
+
+/* Breadcrumbs styling*/
+.selected-breadcrumb {
+    color: white;
+    background-color: #d6b049;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    margin-left: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb-text-p{
+    padding: 1rem;
+}
+
+.hover-breadcrumb{
+    cursor: pointer;
+}
+.hover-breadcrumb:hover{
+    color: white;
+    background-color: #d6b049;
+    padding: 1rem;
+    border-radius: 50px;
+}
+
+.form-signin, .forget-pwd-style{
+    width: 23rem;
+    border: #D3D3D3 solid 1px;
+}
+
+.form-contactstaff{
+    width: 23rem;
+    border: #D3D3D3 solid 1px;
+}
+
+/* Input styling */
+.input-style-1{
+    padding: 1rem;
+    border: 1px #D3D3D3 solid;
+    width: 17.5rem; 
+}
+
+.input-style-no-fx-w{
+    border: 1px #D3D3D3 solid;
+}
+
+
+/* ADMIN BREADCRUMB STYLING */
+#admin_breadcrumb, .border-to-gray-1px{
+    border: 1px #D3D3D3 solid;
+}
+
+.background-to-gold{
+    cursor: pointer;
+}
+
+.background-to-gold:hover{
+    background-color: #d6b049;
+    color: white;
+}
+
+/* TEXT HOVER EFFECT */
+.text-gold-hover-effect{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.text-gold-hover-effect:hover{
+    color: #d6b049;
+}
+
+/* PAGING BACKGROUNDS */
+#admin_page{
+    background-image: url("../src/assets/images/backgrounds/kbs_background_1.png");
+    /* height: 100vh;   */
+}
+
+#contactstaff_page, .background-four {
+    background-image: url("../src/assets/images/backgrounds/kbs_background_4.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* stays fixed as you scroll */
+    min-height: 100vh; /* full device height */
+    width: 100%;  
+}
+
+.background-one{
+    background-image: url("../src/assets/images/backgrounds/kbs_background_1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* stays fixed as you scroll */
+    min-height: 100vh; /* full device height */
+    width: 100%;  
+}
+
+#user_page{
+    background-image: url("../src/assets/images/backgrounds/kbs_background_5.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* stays fixed as you scroll */
+    min-height: 100vh; /* full device height */
+    width: 100%;
+}
+
+
+
+/* SETTING PADDING FOR BUTTONS */
+.btn-padding{
+    padding: 0.5rem;
+}
+
+/* PADDING STYLING */
+.p-bottom-2{
+    padding-bottom: 2rem;
+}
+
+/* USER PAGE STYLING */
+#user_page, #admin_page{
+    overflow: hidden;
+}
