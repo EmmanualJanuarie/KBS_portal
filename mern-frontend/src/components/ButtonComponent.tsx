@@ -1,6 +1,7 @@
 type buttonComponentProps ={
-    name: string,
-    setClassName: string
+    name: string;
+    setClassName: string;
+    setOnClick: () => void;
 }
 
 /**
@@ -12,12 +13,14 @@ type buttonComponentProps ={
  * @returns TSX script that's renders and creates the Button
  */
 
-export default function ButtonComponent({name, setClassName}: buttonComponentProps){
+export default function ButtonComponent({name, setClassName, setOnClick}: buttonComponentProps){
+    
     return(
         <>
             <form>
-                <input type="button" value={name} className={setClassName}/>
+                <input type="button" value={name} className={setClassName} onClick={setOnClick}/>
             </form>
+            
         </>
     );
 
