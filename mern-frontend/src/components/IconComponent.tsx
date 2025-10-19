@@ -10,21 +10,34 @@ type iconComponentProps ={
     defaultSRC: string,
     setClassName: string,
     onHoverSRC: string
-    setLink: string
+    link?: string; //optional link
+    isLinkActive?: boolean;
 }
-export default function IconComponent({defaultSRC, setClassName, onHoverSRC, setLink}: iconComponentProps){
+ 
+export default function IconComponent({defaultSRC, setClassName, onHoverSRC,  link, isLinkActive}: iconComponentProps){
     const [icon, setIcon] = useState(defaultSRC);
+
+    const imgElement = (
+        <img
+            src={icon}
+            alt="Icon"
+            className={setClassName}
+            onMouseEnter={() => setIcon(onHoverSRC)}
+            onMouseLeave={() => setIcon(defaultSRC)}
+        />
+    );
 
     return (
         <div className="shrink-0">
-            <picture>
-                <a href={setLink}>
-                    <img src={icon} alt="Icon" className={setClassName} 
-                    onMouseEnter={()=> setIcon(onHoverSRC)}
-                    onMouseLeave={()=> setIcon(defaultSRC)}
-                    />
+            {isLinkActive && link ? (
+                <picture>
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                    {imgElement}
                 </a>
-            </picture>
+                </picture>
+            ) : (
+                imgElement
+            )}
         </div>
         
     );
