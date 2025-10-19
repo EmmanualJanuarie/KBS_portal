@@ -1,4 +1,45 @@
 # Changelog
+## [0.16.0] -2025-10-16
+### Added
+- WhatsApp Authentication option (For both Admin and User Section)
+
+### Known Issues
+- Icon does not display (whatsapp code request section) - for user/admin section
+- Beadcrumb is not responsive
+- mobile section of forget password, not responsive
+
+
+## [0.15.1] - 2025-10-15
+### Fixed
+- Alignment Problem (Removed 'w-px')
+
+## [0.15.0] - 2025-10-15
+### Added
+- USER Forget PWD Component
+
+
+## [0.14.0] - 2025-10-14
+### added
+- Breadcrumb component
+- User Page Component
+- SignIn Form Component
+
+### Known Issues
+- Alignment Problem (Everything is left aligned, seems likw tailwind is not taking effect?) - AdminPage and  UserPage
+
+## [0.13.0] - 2025-10-13
+### Added
+- Forgot password section to the AdminConsolePage
+
+### Known Issues
+- Device Responsiveness (Mobile and Tablet)
+- Responsiveness of the Breadcrumb in the Forget password
+
+## [0.12.0] - 2025-10-09
+### Added
+- AdminConsolePage to onClick event for landing page button (admin console)
+- Navigation for pages (LandingPage, and AdminCosnolePage)
+- Breadcrumbs for the AdminConsolePage
 
 ## [0.11.1] - 2025-10-07
 _Minor patch improving the testimonial view (how many will be showed)._
