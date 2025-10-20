@@ -1,5 +1,7 @@
+import { ICONS } from "../../utils/icons";
 import IconComponent from "./IconComponent";
 import { useNavigate } from "react-router-dom";
+import MobileBreadCrumb from "./MobileBreadCrumb";
 
 /**
  * Determines the amount of items for the breadcrumb for pages
@@ -28,14 +30,11 @@ type breadCrumbProps = {
         setName: string,
         setNavigationLink: string,
         isSelected: boolean
-    }
+    },
+    setSeperatorIcon: string
 }
-export default function BreadCrumb({crumb_one, crumb_two, crumb_three, crumb_four}:breadCrumbProps){
+export default function BreadCrumb({crumb_one, crumb_two, crumb_three, crumb_four, setSeperatorIcon}:breadCrumbProps){
     const navigate = useNavigate();
-
-    const icons ={
-        arrow: "../src/assets/images/icons/double_arrow_icon.png"
-    }
 
     function breadcrumb(
     ){
@@ -48,7 +47,7 @@ export default function BreadCrumb({crumb_one, crumb_two, crumb_three, crumb_fou
                     },800);
                 }}>{crumb_one.setName}</div>
                 <div>
-                    <IconComponent defaultSRC={icons.arrow} link="" isLinkActive={false} onHoverSRC={icons.arrow} setClassName="w-9 py-3 md:w-10"/>
+                    <IconComponent defaultSRC={setSeperatorIcon} link="" isLinkActive={false} onHoverSRC={setSeperatorIcon} setClassName="w-9 py-3 md:w-10"/>
                 </div>
                 <div className={`${crumb_two.isSelected? "selected-breadcrumb" : "hover-breadcrumb"} breadcrumb-text-p`} onClick={()=>{
                     setTimeout(()=>{
@@ -59,7 +58,7 @@ export default function BreadCrumb({crumb_one, crumb_two, crumb_three, crumb_fou
                 {/* ADD ANOTHER ROUTE */}
                 {crumb_two.shouldAddAnotherRoute && (
                     <>
-                        <IconComponent defaultSRC={icons.arrow} link="" isLinkActive={false} onHoverSRC={icons.arrow} setClassName="w-9 py-3 md:w-10"/>
+                        <IconComponent defaultSRC={setSeperatorIcon} link="" isLinkActive={false} onHoverSRC={setSeperatorIcon} setClassName="w-9 py-3 md:w-10"/>
                         
                         {/* OTHER ROUTES */}
                         <div className={`${crumb_three.isSelected? "selected-breadcrumb" : "hover-breadcrumb"} breadcrumb-text-p`} onClick={()=>{
@@ -74,7 +73,7 @@ export default function BreadCrumb({crumb_one, crumb_two, crumb_three, crumb_fou
                 {crumb_three.shouldAddAnotherRoute && (
                     <>
                         <div>
-                            <IconComponent defaultSRC={icons.arrow} link="" isLinkActive={false} onHoverSRC={icons.arrow} setClassName="w-9 py-3 md:w-10"/>
+                            <IconComponent defaultSRC={setSeperatorIcon} link="" isLinkActive={false} onHoverSRC={setSeperatorIcon} setClassName="w-9 py-3 md:w-10"/>
                         </div>
                         <div className={`${crumb_two.isSelected? "selected-breadcrumb" : "hover-breadcrumb"} breadcrumb-text-p`}>{crumb_four.setName}</div>
                     </>
@@ -88,7 +87,7 @@ export default function BreadCrumb({crumb_one, crumb_two, crumb_three, crumb_fou
             <div className="bg-white/95 shadow-lg rounded-2xl p-6" id="admin_breadcrumb">
                 <div className="lg:flex lg:flex-row md:flex md:flex-row sm:flex sm:flex-row lg:gap-2 md:gap-2 sm:gap-2">
                     {breadcrumb()}
-                </div>
+                </div>                
             </div>
         </div>
     );
