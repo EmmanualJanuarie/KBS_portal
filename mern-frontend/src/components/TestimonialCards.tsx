@@ -7,6 +7,7 @@
 
     import { Swiper, SwiperSlide } from "swiper/react";
     import { Autoplay, Navigation } from "swiper/modules";
+    import { ICONS } from "../../utils/icons";
     import 'swiper/css'
     import 'swiper/css/navigation'
     import rating from "../../utils/rating"
@@ -35,7 +36,7 @@ interface Client {
                 <div className="flex w-full gap-12 justify-center">
                     <div className="hover:text-yellow-500 course-header text-3xl">
                         <picture>
-                            <img src="src/assets/images/icons/quote_icon.png" alt="quote icon image" className="w-16"/>
+                            <img src={ICONS.QUOTATION_MARK_ICON} alt="quote icon image" className="w-16"/>
                         </picture>
                     </div>
                 </div>
