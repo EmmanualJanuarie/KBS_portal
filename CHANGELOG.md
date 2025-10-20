@@ -1,5 +1,17 @@
 # Changelog
-## [0.16.0] -2025-10-16
+## [0.17.0] - 2025-10-20
+### Added
+- Mobile Breadcrumb
+
+### Known Issues
+- Non-Responsive forms of Admin, Contact Staff and User
+
+## [0.16.1] - 2025-10-20
+### Fixed
+- Icon Displayment (Changed the Icon path - created a file in "util" folder)
+- BreadCrumb - mobile section issue (Created a mobileBreadcrumb Component)
+
+## [0.16.0] - 2025-10-16
 ### Added
 - WhatsApp Authentication option (For both Admin and User Section)
 
