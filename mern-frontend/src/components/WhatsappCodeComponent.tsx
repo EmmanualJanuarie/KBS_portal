@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BreadCrumb from "./BreadCrumb";
 import ButtonComponent from "./ButtonComponent";
+import MobileBreadCrumb from "./MobileBreadCrumb";
 
 /**
  * 
@@ -24,9 +25,15 @@ type wpCodeComponentProps = {
     },
     page:{
         backgroundImage:string
+    },
+    setIcon: string,
+    mobileCrumbs:{
+        add_crumb_two: boolean,
+        add_crumb_three: boolean
     }
+
 }
-export default function WhatsappCodeComponent({breadcrumb_one, breadcrumb_two ,breadcrumb_three, page}:wpCodeComponentProps){
+export default function WhatsappCodeComponent({breadcrumb_one, breadcrumb_two ,breadcrumb_three, page, setIcon,mobileCrumbs}:wpCodeComponentProps){
 
     const [toggleSection, setToggleSection] = useState(false);
 
@@ -146,28 +153,51 @@ export default function WhatsappCodeComponent({breadcrumb_one, breadcrumb_two ,b
         <div className={`${page.backgroundImage} w-full`} id="whatsapp_page">
             {/* COLUMN */}
             <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center items-center py-20 gap-20">
-                {/* BREADCRUMBS */}
-                <BreadCrumb 
-                    crumb_one={{
-                        setName: breadcrumb_one.setName,
-                        setNavigationLink: breadcrumb_one.setNavigationLink,
-                        isSelected: false
-                    }}
-                    crumb_two={{
-                        setName: breadcrumb_two.setName,
-                        setNavigationLink: breadcrumb_two.setNavigationLink,
-                        isSelected: false,
-                        shouldAddAnotherRoute: true
-                    }} 
-                    crumb_three={{
-                        setName: breadcrumb_three.setName, 
-                        setNavigationLink: breadcrumb_three.setNavigationLink, 
-                        isSelected: true, 
-                        shouldAddAnotherRoute: false }} 
+                {/* BREADCRUMBS FOR LAPTOP/DESKTOP*/}
+                <div className="hidden md:flex">
+                    <BreadCrumb 
+                        crumb_one={{
+                            setName: breadcrumb_one.setName,
+                            setNavigationLink: breadcrumb_one.setNavigationLink,
+                            isSelected: false
+                        }}
+                        crumb_two={{
+                            setName: breadcrumb_two.setName,
+                            setNavigationLink: breadcrumb_two.setNavigationLink,
+                            isSelected: false,
+                            shouldAddAnotherRoute: true
+                        }} 
+                        crumb_three={{
+                            setName: breadcrumb_three.setName, 
+                            setNavigationLink: breadcrumb_three.setNavigationLink, 
+                            isSelected: true, 
+                            shouldAddAnotherRoute: false,
+                         }} 
 
-                    crumb_four={{ setName: "", setNavigationLink: "", isSelected: false }} //void
+                        crumb_four={{ setName: "", setNavigationLink: "", isSelected: false }} //void
+                        setSeperatorIcon= {setIcon}
+                    />
+                </div>
 
-                />
+                {/* BREADCRUMBS FOR MOBILE */}
+                <div className="flex md:hidden">
+                        <MobileBreadCrumb 
+                            crumb_one={{ 
+                                name: breadcrumb_three.setName, value: breadcrumb_three.setName, 
+                                route: breadcrumb_three.setNavigationLink, 
+                                add_crumb_two: mobileCrumbs.add_crumb_two
+                            }}
+                            crumb_two={{ 
+                                name: breadcrumb_two.setName, value: breadcrumb_two.setName, 
+                                route: breadcrumb_two.setNavigationLink, 
+                                add_crumb_three: mobileCrumbs.add_crumb_three
+                            }}
+                            crumb_three={{ 
+                                name: breadcrumb_one.setName, value: breadcrumb_one.setName, 
+                                route: breadcrumb_one.setNavigationLink
+                            }}
+                        />
+                </div>
 
                 {/* REQUEST CODE FORM */}
                 <div className="bg-white/95 shadow-lg rounded-2xl p-10 items-center justify-center form-contactstaff">
