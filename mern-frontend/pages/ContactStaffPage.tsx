@@ -7,6 +7,8 @@
 
 import BreadCrumb from "../src/components/BreadCrumb";
 import ButtonComponent from "../src/components/ButtonComponent";
+import MobileBreadCrumb from "../src/components/MobileBreadCrumb";
+import { ICONS } from "../utils/icons";
 import { ROUTES } from "../utils/routes";
 
 export default function ContactStaffPage(){
@@ -16,7 +18,9 @@ export default function ContactStaffPage(){
               {/* COLUMN */}
             <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center items-center py-20 gap-20 ">
                 {/* BREADCRUMBS */}
-                <BreadCrumb 
+                {/* BREADCRUMBS FOR LAPTOP/DESKTOP */}
+                <div className="hidden md:flex">
+                    <BreadCrumb 
                     crumb_one={{
                         setName: "Landing Page",
                         setNavigationLink: ROUTES.LANDING_PAGE,
@@ -29,8 +33,19 @@ export default function ContactStaffPage(){
                         shouldAddAnotherRoute: false
                     }} crumb_three={{setName: "", setNavigationLink: "", isSelected: false , shouldAddAnotherRoute: false}} 
                        crumb_four={{ setName: "", setNavigationLink: "", isSelected: false }}
+                       setSeperatorIcon={"../" + ICONS.DOUBLE_ARROW_ICON}
 
                 />
+                </div>
+
+                {/* BREADCRUMBS FOR MOBILE */}
+                <div className="flex md:hidden">
+                    <MobileBreadCrumb 
+                        crumb_one={{ name: "Contact Staff", value: "Contact Staff", route: "", add_crumb_two: true}}
+                        crumb_two={{ name: "Landing Page", value: "Landing Page", route: ROUTES.LANDING_PAGE, add_crumb_three: false}}
+                        crumb_three={{ name: "", value: "", route: ""}}
+                    />
+                </div>
 
                 {/* CONTACT FORM */}
                  <div className="bg-white/95 shadow-lg rounded-2xl p-10 items-center justify-center form-contactstaff">
