@@ -43,10 +43,13 @@
 }
 
 @media (min-width: 340px) {
-    #socials , #icons{
-        display: flex;
-    }
-   
+  #socials , #icons{
+    display: flex;
+  }
+  
+  html{
+    overflow-x: hidden;
+  }
 }
 
 
