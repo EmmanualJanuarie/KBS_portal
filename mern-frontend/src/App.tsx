@@ -7,6 +7,7 @@ import ContactStaffPage from '../pages/ContactStaffPage';
 import UserPage from '../pages/UserPage';
 import { ROUTES } from '../utils/routes'
 import WhatsappCodeComponent from './components/WhatsappCodeComponent';
+import { ICONS } from '../utils/icons';
 function App() {
 
   return (
@@ -25,7 +26,7 @@ function App() {
                 setName: 'Admin Sign In',
                 setNavigationLink: ROUTES.ADMIN_PAGE
               }}
-
+              
               breadcrumb_two={{
                 setName: 'Forget Password?',
                 setNavigationLink: ROUTES.ADMIN_FORGET_PWD
@@ -38,6 +39,13 @@ function App() {
 
               page={{
                 backgroundImage: "background-one"
+              }}
+
+              setIcon = {"/" + ICONS.DOUBLE_ARROW_ICON}
+
+              mobileCrumbs={{
+                add_crumb_two: true,
+                add_crumb_three: true
               }}
           /> 
         } />
@@ -60,8 +68,15 @@ function App() {
             }}
 
             page={{
-              backgroundImage: "background-four"
+              backgroundImage: "background-five"
             }}
+
+            setIcon = { "/" + ICONS.DOUBLE_ARROW_ICON}
+
+            mobileCrumbs={{
+                add_crumb_two: true,
+                add_crumb_three: true
+              }}
         />
         }/>
 
