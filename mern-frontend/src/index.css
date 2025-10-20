@@ -102,7 +102,6 @@
     padding: 10px;
 }
 .nav-item:hover{
-    cursor: pointer;
     border-radius: 6px;
 }
 
@@ -369,7 +368,7 @@ picture{
     /* height: 100vh;   */
 }
 
-#contactstaff_page, .background-four {
+#contactstaff_page {
     background-image: url("../src/assets/images/backgrounds/kbs_background_4.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -389,7 +388,7 @@ picture{
     width: 100%;  
 }
 
-#user_page{
+#user_page, .background-five{
     background-image: url("../src/assets/images/backgrounds/kbs_background_5.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -415,3 +414,16 @@ picture{
 #user_page, #admin_page{
     overflow: hidden;
 }
+
+/* Styling for pointer */
+.cursor-pointer{
+    cursor: pointer;
+}
+
+/* DROPDOWN MENU TRIANGLE STYLING: */
+.triangle-pos{
+    background-position: "calc(100% - 1.8rem) center"; /* moves the default arrow slightly left */
+    background-repeat: "no-repeat";
+    background-size: "1rem"; /* controls size of the default triangle */
+}
+
