@@ -1,11 +1,6 @@
+import { ICONS } from "../../utils/icons";
 import IconComponent from "./IconComponent";
 
-const socials = {
-    x: "src/assets/images/icons/x_icon.png",
-    instagram: "src/assets/images/icons/instagram_icon.png",
-    tiktok: "src/assets/images/icons/tiktok_icon.png",
-    linkedin: "src/assets/images/icons/linkedin_icon.png"
-}
 export default function FooterComponent(){
     return(
         <div className="w-full py-10">
@@ -15,16 +10,16 @@ export default function FooterComponent(){
 
                 <div className="lg:flex lg:flex-row md:flex md:flex-row sm:flex sm:flex-row lg:gap-20 md:gap-20 sm:gap-10" id="icons">
                     <div className="nav-item shrink-0">
-                        <IconComponent defaultSRC={socials.x} link="x.com/kbs" isLinkActive={true} onHoverSRC={socials.x} setClassName="w-9"/>
+                        <IconComponent defaultSRC={ICONS.SOCIAL_MEDIA_X_ICON} link="x.com/kbs" isLinkActive={true} onHoverSRC={ICONS.SOCIAL_MEDIA_X_ICON} setClassName="w-9"/>
                     </div>
                     <div className="nav-item shrink-0">
-                        <IconComponent defaultSRC={socials.instagram} link="x.com/kbs" isLinkActive={true} onHoverSRC={socials.instagram} setClassName="w-9"/>
+                        <IconComponent defaultSRC={ICONS.SOCIAL_MEDIA_INSTA_ICON} link="x.com/kbs" isLinkActive={true} onHoverSRC={ICONS.SOCIAL_MEDIA_INSTA_ICON} setClassName="w-9"/>
                     </div>
                     <div className="nav-item shrink-0">
-                        <IconComponent defaultSRC={socials.tiktok} link="x.com/kbs" isLinkActive={true} onHoverSRC={socials.tiktok} setClassName="w-9"/>
+                        <IconComponent defaultSRC={ICONS.SOCIAL_MEDIA_TIKTOK_ICON} link="x.com/kbs" isLinkActive={true} onHoverSRC={ICONS.SOCIAL_MEDIA_TIKTOK_ICON} setClassName="w-9"/>
                     </div>
                     <div className="nav-item shrink-0">
-                        <IconComponent defaultSRC={socials.linkedin} link="x.com/kbs" isLinkActive={true} onHoverSRC={socials.linkedin} setClassName="w-9"/>
+                        <IconComponent defaultSRC={ICONS.SOCIAL_MEDIA_LINKEDIN_ICON} link="x.com/kbs" isLinkActive={true} onHoverSRC={ICONS.SOCIAL_MEDIA_LINKEDIN_ICON} setClassName="w-9"/>
                     </div>
                 </div>
                 
