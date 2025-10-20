@@ -8,47 +8,49 @@
  * / gives image of two stars
  */
 
+import { ICONS } from "./icons";
+
 export default function rating(rate: string){
     switch (rate) {
         case "1":
             return(
                 <picture>
-                    <img src="src/assets/images/icons/one_star_rating_icon.png" alt="one star rating icon" className="rating-size"/>
+                    <img src={ICONS.ONE_STAR_ICON} alt="one star rating icon" className="rating-size"/>
                 </picture>
             );
 
         case "2":
             return(
                 <picture>
-                    <img src="src/assets/images/icons/two_star_rating_icon.png" alt="two star rating icon" className="rating-size"/>
+                    <img src={ICONS.TWO_STAR_ICON} alt="two star rating icon" className="rating-size"/>
                 </picture>
             );
  
         case "3":
             return(
                 <picture>
-                    <img src="src/assets/images/icons/three_star_rating_icon.png" alt="three star rating icon" className="rating-size"/>
+                    <img src={ICONS.THREE_STAR_ICON} alt="three star rating icon" className="rating-size"/>
                 </picture>
             );
    
         case "4":
             return(
                 <picture >
-                    <img src="src/assets/images/icons/four_star_rating_icon.png" alt="four star rating icon" className="rating-size"/>
+                    <img src={ICONS.FOUR_STAR_ICON} alt="four star rating icon" className="rating-size"/>
                 </picture>
             );
         
         case "5":
             return(
                 <picture>
-                    <img src="src/assets/images/icons/five_star_rating_icon.png" alt="five star rating icon" className="rating-size"/>
+                    <img src={ICONS.FIVE_STAR_ICON} alt="five star rating icon" className="rating-size"/>
                 </picture> 
             );    
     
         default:
             return(
             <picture>
-                <img src="src/assets/images/icons/no_star_rating_icon.png" alt="no star rating icon" className="rating-size"/>
+                <img src={ICONS.NO_STAR_ICON} alt="no star rating icon" className="rating-size"/>
             </picture>
             );
     }
