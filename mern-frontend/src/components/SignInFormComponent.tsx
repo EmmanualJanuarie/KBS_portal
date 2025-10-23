@@ -19,7 +19,7 @@ export default function SignInFormComponent({setFormTitle, setForgetPwdLink}: si
         <div>
             {/* SIGNIN FORM */}
             <div className="bg-white/95 shadow-lg rounded-2xl p-10 items-center justify-center form-signin">
-                <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-20">
+                <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-10 md:gap-10 sm:gap-10">
                     <div className="text-4xl font-bold color-gold text-center">{setFormTitle}</div>
                     <form>
                         {/* INNER COLUMN */}
