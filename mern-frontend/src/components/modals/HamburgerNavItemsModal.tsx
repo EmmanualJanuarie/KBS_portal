@@ -50,22 +50,30 @@ export default function HamburgerNavItemsModal({setClassName, toggleList, setTog
                 <div className="flex items-center gap-0 w-full md:flex-1">
                     <div className="flex md:hidden px-2 py-3 items-center">
                         <ButtonComponent name="Admin console" setClassName="btn-type-2" setOnClick={()=>{
-                    setTimeout(()=>{
-                         navigate(ROUTES.ADMIN_PAGE);
-                    }, 800)
+                            setTimeout(()=>{
+                                window.open(ROUTES.ADMIN_PAGE, '_blank');
+                            }, 800)
                 }} />
                     </div>
                 </div>
                 {/* MOBILE ITEM 5 */}
                 <div className="flex items-center gap-0 w-full md:flex-1">
                     <div className="flex md:hidden px-2 py-3 items-center">
-                        <ButtonComponent name="Contact staff" setClassName="btn-type-2" setOnClick={() => navigate(ROUTES.CONTACT_STAFF_PAFE)} />
+                        <ButtonComponent name="Contact Support" setClassName="btn-type-2" setOnClick={()=>{
+                            setTimeout(()=>{
+                                window.open(ROUTES.CONTACT_STAFF_PAFE, '_blank');
+                            }, 800)
+                        }} />
                     </div>
                 </div>
                 {/* MOBILE ITEM 6 */}
                 <div className="flex items-center gap-0 w-full md:flex-1">
                     <div className="flex md:hidden px-2 py-3 items-center">
-                        <ButtonComponent name="SignIn" setClassName="btn-type-3 btn-w-150" setOnClick={() => navigate(ROUTES.USER_PAGE)}/>
+                        <ButtonComponent name="SignIn" setClassName="btn-type-3 btn-w-150"setOnClick={()=>{
+                            setTimeout(()=>{
+                                window.open(ROUTES.USER_PAGE, '_blank');
+                            }, 800)
+                        }}/>
                     </div>
                 </div>
             </div>
