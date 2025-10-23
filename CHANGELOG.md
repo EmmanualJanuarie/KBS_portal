@@ -1,4 +1,25 @@
 # Changelog
+## [0.20.0] - 2025-20-23
+### Added
+- Message Logic for the WhatsApp and Password Reset
+- Admin Dashboard Page
+- User Dashboard Page
+
+## [0.19.0] - 2025-10-22
+### Added
+- OTP Logic file for reset password (utils folder)
+- Message Component
+
+## [0.18.0] - 2025-10-21
+_Removed BreadCrumbs, because it's not needed, also added Password change request form_
+
+### Removed
+- Mobile BreadCrumb Component
+- BreadCrumb Component
+
+### Added
+- Password change request form
+
 ## [0.17.0] - 2025-10-20
 ### Added
 - Mobile Breadcrumb
