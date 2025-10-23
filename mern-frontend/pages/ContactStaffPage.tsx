@@ -5,52 +5,24 @@
  * @returns tsx script to render in the Contact Staff form
  */
 
-import BreadCrumb from "../src/components/BreadCrumb";
+
+import { useEffect } from "react";
 import ButtonComponent from "../src/components/ButtonComponent";
-import MobileBreadCrumb from "../src/components/MobileBreadCrumb";
-import { ICONS } from "../utils/icons";
-import { ROUTES } from "../utils/routes";
 
 export default function ContactStaffPage(){
+
+    useEffect(() =>{
+        document.title = "Contact Support";
+    });
 
     return(
         <div className="w-full" id="contactstaff_page">
               {/* COLUMN */}
-            <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center items-center py-20 gap-20 ">
-                {/* BREADCRUMBS */}
-                {/* BREADCRUMBS FOR LAPTOP/DESKTOP */}
-                <div className="hidden md:flex">
-                    <BreadCrumb 
-                    crumb_one={{
-                        setName: "Landing Page",
-                        setNavigationLink: ROUTES.LANDING_PAGE,
-                        isSelected: false
-                    }}
-                    crumb_two={{
-                        setName: "Contact Staff",
-                        setNavigationLink: "",
-                        isSelected: true,
-                        shouldAddAnotherRoute: false
-                    }} crumb_three={{setName: "", setNavigationLink: "", isSelected: false , shouldAddAnotherRoute: false}} 
-                       crumb_four={{ setName: "", setNavigationLink: "", isSelected: false }}
-                       setSeperatorIcon={"../" + ICONS.DOUBLE_ARROW_ICON}
-
-                />
-                </div>
-
-                {/* BREADCRUMBS FOR MOBILE */}
-                <div className="flex md:hidden">
-                    <MobileBreadCrumb 
-                        crumb_one={{ name: "Contact Staff", value: "Contact Staff", route: "", add_crumb_two: true}}
-                        crumb_two={{ name: "Landing Page", value: "Landing Page", route: ROUTES.LANDING_PAGE, add_crumb_three: false}}
-                        crumb_three={{ name: "", value: "", route: ""}}
-                    />
-                </div>
-
+            <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center items-center py-30 gap-20 ">
                 {/* CONTACT FORM */}
                  <div className="bg-white/95 shadow-lg rounded-2xl p-10 items-center justify-center form-contactstaff">
-                        <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-20">
-                            <div className="text-4xl font-bold color-gold text-center">Contact Staff</div>
+                        <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-10">
+                            <div className="text-4xl font-bold color-gold text-center">Contact Support</div>
                             <form>
                                 {/* INNER COLUMN */}
                                 <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-10 md:gap-10 sm:gap-10">
