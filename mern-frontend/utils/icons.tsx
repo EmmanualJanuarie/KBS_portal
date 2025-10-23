@@ -10,5 +10,7 @@ export const ICONS = {
     SOCIAL_MEDIA_X_ICON: "src/assets/images/icons/x_icon.png",
     SOCIAL_MEDIA_INSTA_ICON: "src/assets/images/icons/instagram_icon.png",
     SOCIAL_MEDIA_TIKTOK_ICON: "src/assets/images/icons/tiktok_icon.png",
-    SOCIAL_MEDIA_LINKEDIN_ICON: "src/assets/images/icons/linkedin_icon.png"
+    SOCIAL_MEDIA_LINKEDIN_ICON: "src/assets/images/icons/linkedin_icon.png",
+    ERROR_ICON: "src/assets/images/icons/error_icon.png",
+    CORRECT_ICON: "src/assets/images/icons/correct_icon.png",
 }
