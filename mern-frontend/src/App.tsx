@@ -4,10 +4,14 @@ import AdminConsolePage from '../pages/AdminConsolePage';
 import AdminForgetPwdPage from '../pages/AdminForgetPwdPage';
 import UserForgetPwdPage from '../pages/UserForgetPwdPage';
 import ContactStaffPage from '../pages/ContactStaffPage';
+import AdminDashboardPage from '../pages/AdminDashboardPage';
+import UserDashboardPage from '../pages/UserDashboardPage';
 import UserPage from '../pages/UserPage';
 import { ROUTES } from '../utils/routes'
 import WhatsappCodeComponent from './components/WhatsappCodeComponent';
-import { ICONS } from '../utils/icons';
+import PasswordChangeComponent from './components/PasswordResetOptionComponent';
+import { BACKGROUNDS } from '../utils/backgrounds'
+
 function App() {
 
   return (
@@ -19,65 +23,39 @@ function App() {
         <Route path={ROUTES.USER_PAGE} element={<UserPage />} />
         <Route path={ROUTES.USER_FORGET_PWD} element={<UserForgetPwdPage />} />
         <Route path={ROUTES.CONTACT_STAFF_PAFE} element={<ContactStaffPage />} />
+        <Route path={ROUTES.ADMIN_DASHBOARD} element={<AdminDashboardPage />}/>
+        <Route path={ROUTES.USER_DASHBOARD} element={<UserDashboardPage />}/>
 
         <Route path={ROUTES.ADMIN_PAGE_WHATSAPP_CODE_REQUEST} element={
           <WhatsappCodeComponent 
-              breadcrumb_one={{
-                setName: 'Admin Sign In',
-                setNavigationLink: ROUTES.ADMIN_PAGE
-              }}
-              
-              breadcrumb_two={{
-                setName: 'Forget Password?',
-                setNavigationLink: ROUTES.ADMIN_FORGET_PWD
-              }}
-
-              breadcrumb_three={{
-                setName: 'WhatsApp Option',
-                setNavigationLink: ''
-              }}
-
-              page={{
-                backgroundImage: "background-one"
-              }}
-
-              setIcon = {"/" + ICONS.DOUBLE_ARROW_ICON}
-
-              mobileCrumbs={{
-                add_crumb_two: true,
-                add_crumb_three: true
-              }}
+              page={{ backgroundImage: BACKGROUNDS.class.ADMIN_BACKGROUND}}
+              tab={{ title: "Admin | WhatsApp Code"}}
+              options={{ changeOptions: ROUTES.ADMIN_FORGET_PWD}}
+              isAdmin={true}
           /> 
         } />
-
+        
         <Route path={ROUTES.USER_PAGE_WHATSAPP_CODE_REQUEST} element={
-        <WhatsappCodeComponent 
-            breadcrumb_one={{
-              setName: 'User Sign In',
-              setNavigationLink: ROUTES.USER_PAGE
-            }}
-
-            breadcrumb_two={{
-              setName: 'Forget Password?',
-              setNavigationLink: ROUTES.USER_FORGET_PWD
-            }}
-
-            breadcrumb_three={{
-              setName: 'WhatsApp Option',
-              setNavigationLink: ''
-            }}
-
-            page={{
-              backgroundImage: "background-five"
-            }}
-
-            setIcon = { "/" + ICONS.DOUBLE_ARROW_ICON}
-
-            mobileCrumbs={{
-                add_crumb_two: true,
-                add_crumb_three: true
-              }}
-        />
+          <WhatsappCodeComponent 
+              page={{ backgroundImage: BACKGROUNDS.class.USER_BACKGROUND }}
+              tab={{ title: "User | WhatsApp Code"}}
+              options={{ changeOptions: ROUTES.USER_FORGET_PWD}}
+              isAdmin={false}
+          />
+        }/>
+        <Route path={ROUTES.ADMIN_PAGE_PASSWORD_RESET_REQUEST} element={
+          <PasswordChangeComponent 
+              page={{ backgroundImage: BACKGROUNDS.class.ADMIN_BACKGROUND}}
+              tab={{ title: "Admin | Password Reset"}}
+              options={{ changeOptions: ROUTES.ADMIN_FORGET_PWD}}
+              isAdmin={true} />
+        }/>
+        <Route path={ROUTES.USER_PAGE_PASSWORD_RESET_REQUEST} element={
+          <PasswordChangeComponent 
+              page={{ backgroundImage: BACKGROUNDS.class.USER_BACKGROUND}}
+              tab={{ title: "User | Password Reset"}}
+              options={{ changeOptions: ROUTES.USER_FORGET_PWD}}
+              isAdmin={false} />
         }/>
 
         
