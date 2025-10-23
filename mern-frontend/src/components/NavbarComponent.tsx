@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import ButtonComponent from "./ButtonComponent"
 import LogoComponent from "./LogoComponent"
 import { ROUTES } from "../../utils/routes";
@@ -16,8 +15,6 @@ type navbarProps = {
 }
 
 export default function NavbarComponent({toggleList, setToggleList}: navbarProps){
-
-    const navigate = useNavigate();
 
     return(
        <div className="w-full px-4 py-4">
@@ -48,11 +45,19 @@ export default function NavbarComponent({toggleList, setToggleList}: navbarProps
             <div className="flex gap-4 justify-end w-full">
                 <ButtonComponent name="Admin console" setClassName="btn-type-1" setOnClick={()=>{
                     setTimeout(()=>{
-                         navigate(ROUTES.ADMIN_PAGE);
+                         window.open(ROUTES.ADMIN_PAGE, '_blank');
                     }, 800)
                 }}/>
-                <ButtonComponent name="Contact staff" setClassName="btn-type-2" setOnClick={() => navigate(ROUTES.CONTACT_STAFF_PAFE)} />
-                <ButtonComponent name="SignIn" setClassName="btn-type-3 btn-w-150" setOnClick={() => navigate(ROUTES.USER_PAGE)} />
+                <ButtonComponent name="Contact Support" setClassName="btn-type-2" setOnClick={() => {
+                    setTimeout(()=>{
+                        window.open(ROUTES.CONTACT_STAFF_PAFE, '_blank')
+                    }, 800)
+                }}/>
+                <ButtonComponent name="SignIn" setClassName="btn-type-3 btn-w-150" setOnClick={() => {
+                    setTimeout(()=>{
+                        window.open(ROUTES.USER_PAGE, '_blank')
+                    }, 800)
+                }} />
             </div>
 
         </div>
