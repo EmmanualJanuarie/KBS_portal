@@ -43,7 +43,7 @@ export default function LandingPage(){
             </div>
 
             {/* HERO SECTION */}
-            <div className="hero">
+            <div className="hero" id="overview">
                 <HeroComponent/>
             </div>
 
@@ -53,17 +53,17 @@ export default function LandingPage(){
             </div>
 
             {/* ABOUT KBS PORTAL SECTION */}
-            <div className="guide">
+            <div className="guide" id="guide">
                 <GuideComponent />
             </div>
 
             {/* TESTIMONIALS SECTION */}
-            <div className="testimonials">
+            <div className="testimonials" id="testimonials">
                 <TestimonialsComponent />
             </div>
 
             {/*  FAQs SECTION */}
-            <div className="FAQs">
+            <div className="FAQs" id="faqs">
                 <FAQsComponent />
             </div>
 
