@@ -6,9 +6,13 @@ export default function AdminDashboardPage(){
     });
 
     return(
-        <div className="flex flex-row md:flex md:flex-row">
-            <div className=" bg-white/95 shadow-lg p-10 justify-center border-gray lg:w-full">SideBar</div>
-            <div className="bg-white/90 shadow-lg p-10 justify-center w-full">RightPane</div>
+        <div className="flex flex-row lg:gap-20">
+            <div className="flex flex-col bg-white/96 rounded-lg shadow-lg w-[400px]">
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+            </div>
+            <div className="flex-1 bg-blue-100 p-4">Content Pane</div>
         </div>
     );
 }
