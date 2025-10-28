@@ -10,7 +10,7 @@ export default function PasswordResetComponent(){
 
         <form>
             {/* INNER COLUMN */}
-            <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-10 md:gap-10 sm:gap-10">
+            <div className="flex flex-col justify-center gap-10">
 
                 {/* PASSWORD INPUT */}
                 <div className="">
