@@ -56,7 +56,7 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
         return(
              <form>
             {/* INNER COLUMN */}
-            <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-10 md:gap-10 sm:gap-10">
+            <div className="flex flex-col justify-center gap-10">
                 {/* SUB-TEXT */}
                 <div className="text-center">
                     Enter your email and click submit. An <b>OTP</b> will be <u>sent to your WhatsApp number</u>. 
@@ -110,7 +110,7 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
         return(
              <form>
             {/* INNER COLUMN */}
-            <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-10 md:gap-10 sm:gap-10">
+            <div className="flex flex-col justify-center gap-10">
                 {/* SUB-TEXT */}
                 <div className="text-center">
                     Enter the <b>6 digit OTP</b> you recived bellow. You have limited time to do so "90min expired time"
@@ -123,11 +123,11 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
                     </label>
 
                     {/* CODE INPUT SECTION */}
-                    <div className="flex flex-row md:flex md:flex-row sm:flex sm:flex-row justify-left lg:gap-2 md:gap-2 sm:gap-2">
+                    <div className="flex flex-row justify-left gap-2">
                         <input
                             type="text"
                             placeholder="5"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 md:p-3 sm:p-3"
+                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
                             name="input1"
                             value={inputs.input1}
                             onChange={handleInputChange}
@@ -137,7 +137,7 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
                         <input
                             type="text"
                             placeholder="6"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 md:p-3 sm:p-3"
+                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
                             name="input2"
                             value={inputs.input2}
                             onChange={handleInputChange}
@@ -147,7 +147,7 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
                         <input
                             type="text"
                             placeholder="7"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 md:p-3 sm:p-3"
+                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
                             name="input3"
                             value={inputs.input3}
                             onChange={handleInputChange}
@@ -157,7 +157,7 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
                         <input
                             type="text"
                             placeholder="M"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 md:p-3 sm:p-3"
+                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
                             name="input4"
                             value={inputs.input4}
                             onChange={handleInputChange}
@@ -167,7 +167,7 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
                         <input
                             type="text"
                             placeholder="C"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 md:p-3 sm:p-3"
+                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
                             name="input5"
                             value={inputs.input5}
                             onChange={handleInputChange}
@@ -177,7 +177,7 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
                          <input
                             type="text"
                             placeholder="E"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 md:p-3 sm:p-3"
+                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
                             name="input6"
                             value={inputs.input6}
                             onChange={handleInputChange}
@@ -219,7 +219,7 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
             <div className="flex flex-col items-center py-24 gap-2">
                 {/* REQUEST CODE FORM */}
                 <div className="bg-white/95 shadow-lg rounded-2xl p-10 items-center justify-center form-contactstaff">
-                    <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-3 md:gap-3 sm:gap-3">
+                    <div className="flex flex-col justify-center gap-3">
                         <div className="text-4xl font-bold color-gold text-center">Reset Password</div>
                             {/* DEFAULT - SHOW EMAIL SECTION, AND WHEN INCORRECT*/}
                             <div className={`transition-all duration-500 ease-in-out ${
