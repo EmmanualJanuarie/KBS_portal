@@ -1,6 +1,8 @@
 import ButtonComponent from "./ButtonComponent"
 import LogoComponent from "./LogoComponent"
 import { ROUTES } from "../../utils/routes";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 /**
  * Contains the set tailwind layout structure for the navbar.
@@ -16,6 +18,51 @@ type navbarProps = {
 
 export default function NavbarComponent({toggleList, setToggleList}: navbarProps){
 
+    const navitems = [
+        {   class: "text-gray text-hover-gold nav-item", name: "Home", scrollTo: "/", isHome: true, normalNavs: FUNC_NAVITEMS},
+        {   class: `nav-item ${toggleList ? "color-gold" : "text-gray"} text-hover-gold`, name: "Courses", scrollTo: "", isHome: false, eventclick: FUNC_COURSES},
+        {   class: "text-gray text-hover-gold nav-item", name: "Guide", scrollTo: "guide", isHome: false, normalNavs: FUNC_NAVITEMS},
+        {   class: "text-gray text-hover-gold nav-item", name: "Testimonials", scrollTo: "testimonials", isHome: false, normalNavs: FUNC_NAVITEMS},
+        {   class: "text-gray text-hover-gold nav-item", name: "FAQs", scrollTo: "faqs", isHome: false, normalNavs: FUNC_NAVITEMS },
+    ]
+
+    const [naviItem, setNavItem] = useState<number | null>(null);
+
+    const scrollToSection = (id:string) =>{
+        const section = document.getElementById(id);
+        if(section){
+            section.scrollIntoView( {behavior: "smooth"} );
+        }
+    };
+
+    const toggle = (index: number) =>{
+        setNavItem(naviItem == index ? null: index);
+    };
+
+    const navigate = useNavigate();
+
+    const goHome = (navTo:string) =>{
+        navigate(navTo);
+        window.scrollTo({ top: 0, behavior: "smooth"});
+    }
+
+    // Function for courses
+    function FUNC_COURSES(){
+        setToggleList(prev => !prev);
+    }
+
+    // Function for nav items
+    function FUNC_NAVITEMS(index: number, scrollTo: string, isHome: boolean ){
+        toggle(index);
+        scrollToSection(scrollTo);
+
+        if(isHome){
+            goHome(scrollTo);
+        }
+    }
+
+
+
     return(
        <div className="w-full px-4 py-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
@@ -29,20 +76,31 @@ export default function NavbarComponent({toggleList, setToggleList}: navbarProps
 
             {/* Nav Items */}
             <div className="md:flex md:flex-row gap-2">
-                <div className={`nav-item ${toggleList ? "color-gold" : "text-gray"} text-hover-gold`} 
-                    onClick={() => setToggleList(!toggleList)}>
-                    Courses
-                </div>
-                <div className="text-gray text-hover-gold nav-item">Guide</div>
-                <div className="text-gray text-hover-gold nav-item">Testimonials</div>
-                <div className="text-gray text-hover-gold nav-item">FAQs</div>
-            </div>
+                {navitems.map((navitems, index) =>(
+                    <div key={index} className={`${naviItem === index? "color-gold": "text-gray"} ${navitems.class}`} onClick={()=>
+                        {
+                            if(navitems.eventclick){
+                                navitems.eventclick()
+                            }else if(navitems.normalNavs){
+                                navitems.normalNavs(index, navitems.scrollTo, navitems.isHome);
+                            }
+
+                            
+                        }
+                    }>
+                        {navitems.name}
+                    
+                    </div>
+                ))}
+
+                
+            </div> 
             </div>
 
             
 
             {/* RIGHT SIDE */}
-            <div className="flex gap-4 justify-end w-full">
+            <div className="flex flex-row gap-4 justify-end">
                 <ButtonComponent name="Admin console" setClassName="btn-type-1" setOnClick={()=>{
                     setTimeout(()=>{
                          window.open(ROUTES.ADMIN_PAGE, '_blank');
