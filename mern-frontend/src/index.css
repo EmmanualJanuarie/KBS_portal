@@ -171,8 +171,8 @@
 }
 
 /* hidding any container  - for tailwind #FIX*/ 
-.flex { display: flex; }
-.hidden { display: none; }
+ .flex{display: flex;}
+ .hidden{display: none;}
 
 
 /* Styles for the Courses */
@@ -373,17 +373,9 @@ picture{
     width: 100%;  
 }
 
-#contactstaff_page {
-    background-image: url("../src/assets/images/backgrounds/kbs_background_4.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; /* stays fixed as you scroll */
-    min-height: 100vh; /* full device height */
-    width: 100%;  
-}
 
-.background-one{
+
+.background-one, #contactstaff_page, #user_page{
     background-image: url("../src/assets/images/backgrounds/kbs_background_1.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -393,7 +385,7 @@ picture{
     width: 100%;  
 }
 
-#user_page, .background-five{
+.background-five{
     background-image: url("../src/assets/images/backgrounds/kbs_background_5.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -430,5 +422,9 @@ picture{
     background-position: "calc(100% - 1.8rem) center"; /* moves the default arrow slightly left */
     background-repeat: "no-repeat";
     background-size: "1rem"; /* controls size of the default triangle */
+}
+
+.border-gray{
+    border: 1px solid lightgray;
 }
 
