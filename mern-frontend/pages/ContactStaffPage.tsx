@@ -18,14 +18,14 @@ export default function ContactStaffPage(){
     return(
         <div className="w-full" id="contactstaff_page">
               {/* COLUMN */}
-            <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center items-center py-30 gap-20 ">
+            <div className="flex flex-col justify-center items-center py-30 gap-20 ">
                 {/* CONTACT FORM */}
                  <div className="bg-white/95 shadow-lg rounded-2xl p-10 items-center justify-center form-contactstaff">
-                        <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-10">
+                        <div className="flex flex-col justify-center gap-10">
                             <div className="text-4xl font-bold color-gold text-center">Contact Support</div>
                             <form>
                                 {/* INNER COLUMN */}
-                                <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-10 md:gap-10 sm:gap-10">
+                                <div className="flex flex-col justify-center gap-10">
                                     {/* EMAIL INPUT */}
                                     <div className="">
                                         <label htmlFor="email" className="text-lg font-medium items-left py-20 text-gray-700 mb-1">
