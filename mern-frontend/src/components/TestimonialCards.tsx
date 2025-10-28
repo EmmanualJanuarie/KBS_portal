@@ -34,7 +34,7 @@ interface Client {
         return(
             <div className={`transform transition-all duration-500 ease-in-out`}>
                 <div className="flex w-full gap-12 justify-center">
-                    <div className="hover:text-yellow-500 course-header text-3xl">
+                    <div className="hover:text-yellow-500 course-header text-3xl ">
                         <picture>
                             <img src={ICONS.QUOTATION_MARK_ICON} alt="quote icon image" className="w-16"/>
                         </picture>
