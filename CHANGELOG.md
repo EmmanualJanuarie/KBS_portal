@@ -1,5 +1,15 @@
 # Changelog
-## [0.20.0] - 2025-20-23
+## [0.20.1] - 2025-10-28
+### Fixed
+- Navbar item hover effect fixed (w-full casused issue)
+- Non-responsive Admin ,and User Sign In Forms, as well as Contact Support form
+- Carousel Card Responsive Issue
+- Guide cards non-responsive (set base flex and direction)
+- Admin and User WhatsApp Code Form non-responsive
+- Admin and User Password Reset Form non-responsive
+- contact support form non-responsive
+
+## [0.20.0] - 2025-10-23
 ### Added
 - Message Logic for the WhatsApp and Password Reset
 - Admin Dashboard Page
