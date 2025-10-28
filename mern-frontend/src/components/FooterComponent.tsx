@@ -81,7 +81,7 @@ export default function FooterComponent(){
             {/* COPYRIGHT AND VERSIONING SECTION */}
             <div className="md:flex md:flex-row footer-items-gap justify-center">
                 <div className="py-3 text-gray sm:text-center">
-                    © 2025 KBS Portal. All rights reserved. | Version 0.11.0
+                    © 2025 KBS Portal. All rights reserved. | Version 0.20.1
                 </div>
             </div>
         </div>
