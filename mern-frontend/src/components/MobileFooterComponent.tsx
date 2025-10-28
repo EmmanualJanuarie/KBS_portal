@@ -81,7 +81,7 @@ export default function MobileFooterComponent(){
             {/* COPYRIGHT AND VERSIONING SECTION */}
             <div className="footer-items-gap text-justify text-wrap justify-center">
                 <div className="py-3 text-gray text-center">
-                    © 2025 KBS Portal. All rights reserved. | Version 0.11.0
+                    © 2025 KBS Portal. All rights reserved. | Version 0.20.1
                 </div>
             </div>
         </div>
