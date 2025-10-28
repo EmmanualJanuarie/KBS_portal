@@ -45,12 +45,12 @@ export default function VerticalCarouselComponent({setClassName, reverseDirectio
   modules={[Autoplay]}
   breakpoints={{
     320: {
-      direction: "horizontal", // horizontal on small devices
+      direction: "vertical", // horizontal on small devices
       slidesPerView: 1,
       spaceBetween: 16, // gap between cards
     },
     640: {
-      direction: "horizontal",
+      direction: "vertical",
       slidesPerView: 1,
       spaceBetween: 16,
     },
