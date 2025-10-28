@@ -15,7 +15,7 @@ export default function GuideComponent(){
         </span>
       </h1>
 
-      <div className="grid lg:grid-col-3 md:grid-cols-3 sm:grid-col-1 gap-10 items-center w-full px-20 ">
+      <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row sm gap-20  sm:gap-20 items-center lg:px-20 md:px-20 py-20 justify-center">
   {[
     { 
       num: 1, 
