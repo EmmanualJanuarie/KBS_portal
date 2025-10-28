@@ -54,7 +54,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
         return(
              <form>
             {/* INNER COLUMN */}
-            <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-10 md:gap-10 sm:gap-10">
+            <div className="flex flex-col gap-10">
                 {/* SUB-TEXT */}
                 <div className="text-center">
                     Enter your email and click submit. An <b>OTP</b> will be <u>sent to your WhatsApp number</u>. 
@@ -107,7 +107,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
         return(
              <form>
             {/* INNER COLUMN */}
-            <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-10 md:gap-10 sm:gap-10">
+            <div className="flex flex-col gap-10">
                 {/* SUB-TEXT */}
                 <div className="text-center">
                     Enter the <b>6 digit OTP</b> you recived bellow. You have limited time to do so "90min expired time"
@@ -120,11 +120,11 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                     </label>
 
                     {/* CODE INPUT SECTION */}
-                    <div className="flex flex-row md:flex md:flex-row sm:flex sm:flex-row justify-left lg:gap-2 md:gap-2 sm:gap-2">
+                    <div className="flex flex-row gap-2">
                         <input
                             type="text"
                             placeholder="1"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 md:p-3 sm:p-3"
+                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
                             name="input1"
                             value={inputs.input1}
                             onChange={handleInputChange}
@@ -134,7 +134,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                         <input
                             type="text"
                             placeholder="2"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 md:p-3 sm:p-3"
+                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 p-3"
                             name="input2"
                             value={inputs.input2}
                             onChange={handleInputChange}
@@ -144,7 +144,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                         <input
                             type="text"
                             placeholder="3"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 md:p-3 sm:p-3"
+                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
                             name="input3"
                             value={inputs.input3}
                             onChange={handleInputChange}
@@ -154,7 +154,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                         <input
                             type="text"
                             placeholder="W"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 md:p-3 sm:p-3"
+                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
                             name="input4"
                             value={inputs.input4}
                             onChange={handleInputChange}
@@ -164,7 +164,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                         <input
                             type="text"
                             placeholder="T"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 md:p-3 sm:p-3"
+                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
                             name="input5"
                             value={inputs.input5}
                             onChange={handleInputChange}
@@ -174,7 +174,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                          <input
                             type="text"
                             placeholder="C"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 md:p-3 sm:p-3"
+                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
                             name="input6"
                             value={inputs.input6}
                             onChange={handleInputChange}
