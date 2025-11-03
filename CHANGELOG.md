@@ -1,4 +1,9 @@
 # Changelog
+## [0.21.0] - 2025 -11-03
+### Added
+- scroll to home section logic
+- tailwind css to centralize hamburger component Items
+
 ## [0.20.1] - 2025-10-28
 ### Fixed
 - Navbar item hover effect fixed (w-full casused issue)
