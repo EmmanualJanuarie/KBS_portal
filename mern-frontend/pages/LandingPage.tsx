@@ -34,7 +34,7 @@ export default function LandingPage(){
 
                 {/* Show the modal when toggle is true */}
                 <div className="navItemModal">
-                    {toggle && <HamburgerNavItemsModal setToggleList={setToggleList} toggleList={toggleList} setClassName="w-full px-4 py-4 flex md:hidden"/>}
+                    {toggle && <HamburgerNavItemsModal setToggleList={setToggleList} toggleList={toggleList} setClassName="w-full px-4 py-4 flex md:hidden justify-center"/>}
                 </div>
 
                 <div className="courseModal">
