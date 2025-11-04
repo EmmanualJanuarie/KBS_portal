@@ -1,4 +1,8 @@
 # Changelog
+## [0.22.0] - 2025 -11-04
+### Added
+- logic to hide HamburgerNavItems
+- reload with a fade style (More cleaner and modern approach)
 ## [0.21.0] - 2025 -11-03
 ### Added
 - scroll to home section logic
