@@ -26,6 +26,7 @@ export default function HamburgerNavItemsModal({setClassName, toggleList, setTog
     ]
 
     const [mobileNaviItem, setMobileNavItem] = useState<number | null>(null);
+    const [toggleItems, setToggleItems] = useState(false); // determins the nav Items display state
 
     const scrollToSection = (id:string) =>{
         const section = document.getElementById(id);
@@ -59,10 +60,21 @@ export default function HamburgerNavItemsModal({setClassName, toggleList, setTog
             goHome(scrollTo);
         }
 
-        setToggleList(false); // Closes the Hamburger Modal
+        setToggleItems(false);
+
+        //Refreshes page for 5 seconds
+        setTimeout(() => {
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.reload();
+            }, 2); // Wait for fade-out to finish before reloading
+        }, 900);
     }
-    return(
-        <div className={setClassName}>
+
+    //Function for entire HamburgerList
+    function FUNC_HAM_NAVITEM_LIST(){
+        return(
+            <div className={setClassName}>
             <div className="flex flex-col md:flex-row gap-0 justify-center items-center">
                 {/* MOBILE ITEMS*/}
                 <div className="flex flex-col items-center justify-center gap-0 w-full md:flex-1">
@@ -73,6 +85,8 @@ export default function HamburgerNavItemsModal({setClassName, toggleList, setTog
                                     mobileItems.eventclick()
                                 }else if(mobileItems.normalNavs){
                                     mobileItems.normalNavs(index, mobileItems.scrollTo, mobileItems.isHome);
+                                    // Toggle the menu closed after clicking a link
+                                    setToggleItems(true);
                                 }
                             }
                         }}>
@@ -113,5 +127,17 @@ export default function HamburgerNavItemsModal({setClassName, toggleList, setTog
                 </div>
             </div>
         </div>
+        );
+    }
+    return(
+        <>
+            {!toggleItems? 
+                <>
+                    {FUNC_HAM_NAVITEM_LIST()}
+                </>
+                :
+                null
+            }
+        </>
     );
 }
