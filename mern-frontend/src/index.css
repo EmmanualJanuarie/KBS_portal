@@ -152,9 +152,9 @@
     text-align: center;
 }
 
-.color-gold{
+/* .color-gold{
     color: #c1982b;
-}
+} */
 
 .metric{
     font-size: 50px;
@@ -234,6 +234,11 @@ picture{
 
 .color-gold{
     color: #d6b049;
+}
+
+.active-nav-item{
+    color:#d6b049;
+    text-decoration: underline;
 }
 
 /* ABOUT US SECTION STYLING */
@@ -426,5 +431,11 @@ picture{
 
 .border-gray{
     border: 1px solid lightgray;
+}
+
+/* fade.css */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
 }
 
