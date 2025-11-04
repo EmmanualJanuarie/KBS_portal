@@ -1,7 +1,7 @@
 import ButtonComponent from "./ButtonComponent"
 import LogoComponent from "./LogoComponent"
 import { ROUTES } from "../../utils/routes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 /**
@@ -20,13 +20,14 @@ export default function NavbarComponent({toggleList, setToggleList}: navbarProps
 
     const navitems = [
         {   class: "text-gray text-hover-gold nav-item", name: "Home", scrollTo: "/", isHome: true, normalNavs: FUNC_NAVITEMS},
-        {   class: `nav-item ${toggleList ? "color-gold" : "text-gray"} text-hover-gold`, name: "Courses", scrollTo: "", isHome: false, eventclick: FUNC_COURSES},
+        {   class: `nav-item ${toggleList ? "active-nav-item" : "text-gray"} text-hover-gold`, name: "Courses", scrollTo: "", isHome: false, eventclick: FUNC_COURSES},
         {   class: "text-gray text-hover-gold nav-item", name: "Guide", scrollTo: "guide", isHome: false, normalNavs: FUNC_NAVITEMS},
         {   class: "text-gray text-hover-gold nav-item", name: "Testimonials", scrollTo: "testimonials", isHome: false, normalNavs: FUNC_NAVITEMS},
         {   class: "text-gray text-hover-gold nav-item", name: "FAQs", scrollTo: "faqs", isHome: false, normalNavs: FUNC_NAVITEMS },
     ]
 
     const [naviItem, setNavItem] = useState<number | null>(null);
+    const [scrolling, setScrolling] = useState(false);
 
     const scrollToSection = (id:string) =>{
         const section = document.getElementById(id);
@@ -60,6 +61,48 @@ export default function NavbarComponent({toggleList, setToggleList}: navbarProps
             goHome(scrollTo);
         }
     }
+
+     // Handle scroll logic for navItems
+        useEffect(()=>{
+            const handleScroll = ()=>{
+                setScrolling(true);
+            };
+
+            window.addEventListener("scroll", handleScroll)
+
+            return()=>{
+                window.removeEventListener("scroll", handleScroll)
+            }
+        }, []);
+
+        // Update active navItem based on scroll
+        useEffect(()=>{
+            if (!scrolling) return;
+
+            const sections = navitems.map((item) => document.getElementById(item.scrollTo));
+
+            let activeIndex = null;
+
+            // First check if we are at the top of the page and on "Home"
+            if (window.scrollY === 0) {
+                activeIndex = 0; // Home section
+            } else {
+                for (let i = 0; i < sections.length; i++) {
+                    const section = sections[i];
+                    if (section) {
+                    const rect = section.getBoundingClientRect();
+
+                    // Check if the section is in the viewport
+                    if (rect.top <= window.innerHeight / 2 && rect.bottom >= 0) {
+                        activeIndex = i;
+                        break;
+                    }
+                    }
+                }
+            }
+            setNavItem(activeIndex);
+            setScrolling(false);
+        }, [scrolling]);
 
 
 
