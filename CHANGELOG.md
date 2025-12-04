@@ -1,5 +1,58 @@
 # Changelog
-## [0.22.0] - 2025 -11-04
+### [0.28.1] - 2025-11-17
+### Fixed
+- Admin Pane Responsive issue (Table was the problem ~ sol: changed the table for mobile and tab into cards)
+### [0.27.0] - 2025-11-14
+### Added 
+- Admin Pane (Add user, add Admin Form, with table populated with dummy data)
+
+### Known Issue
+- Admin Pane responsiveness issue (Nothing shows up in the mobile section, and it looks out of proportion in the tab size)
+
+### [0.26.1] - 2025-11-14
+### Fixed
+- Testimonial Responsive issue (removed "h-[400px] max-w-[700px]" in TestimonialCards Component line:86) 
+
+### [0.26.0] - 2025-11-13
+### Known Issues
+- Testimonials not responsive
+
+### [0.25.1] - 2025-11-12
+### Fixed
+- Admin dashboard responsive issue
+- Metrics Pane responsive issue ~ (completly removed flex box and used grid instead)
+- Charts Clip Off ~ (set the width of the ResponsiveContainer to "full")
+
+## [0.25.0] - 2025-11-11
+### Added
+- REACT library for graphs (ReChart)
+- GRAPH SET UP (Bar, Horizontal Bar, Pie, Line and Bubble) ~ for Metrics
+- SKELETON SET UP (Bar, Horizontal Bar, Pie, Line and Bubble) ~ for Metrics
+
+### Known Issues
+- Charts clip off when zoom in
+- Metrics pane is not responsive
+- Admin Dashboard is not repsonsive
+
+
+## [0.24.0] - 2025-11-10
+### Added
+- Panes folder, houses pane components
+- Metrics Pane (For graphical Content e.g. graphs pie charts etc.)
+- Admin Pane (For adding new admins, new users to dashbaord)
+- Course Management (For adding and editing new courses)
+- Assessment Management (For creating assessments based on courses)
+- Event Management (For creating events)
+- Resource Management (For uploading, or managing, or editing documents)
+- My Account Component (for editing users account)
+- Skeleton set up for admin dashboard
+
+## [0.23.0] - 2025-11-05
+### Added
+- DashboardSidebar Component
+- DashboardTitleBoard
+
+## [0.22.0] - 2025-11-04
 ### Added
 - logic to hide HamburgerNavItems
 - reload with a fade style (More cleaner and modern approach)

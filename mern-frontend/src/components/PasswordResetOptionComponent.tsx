@@ -5,7 +5,7 @@ import ButtonComponent from "./ButtonComponent";
 import { useNavigate } from "react-router-dom";
 import PasswordResetComponent from "./PasswordResetComponent";
 import MessageComponent from "./MessageComponent";
-import { ICONS } from "../../utils/icons";
+import { MATERIALS } from "../../utils/materials";
 
 /**
  * Displays the Password change component
@@ -44,7 +44,7 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
     const [isOtpValid, setIsOtpValid] = useState<boolean | null>(null);
 
     // Destructuring the OTP input function
-    const {inputs, handleInputChange, combinedInputs} = OTP_INPUT_FUNC();
+    const {otp, handleInputChange} = OTP_INPUT_FUNC();
 
     //To determine if email is valid
     const [isEmailValid, setIsEmailValid] = useState<boolean | null>(null);
@@ -126,64 +126,13 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
                     <div className="flex flex-row justify-left gap-2">
                         <input
                             type="text"
-                            placeholder="5"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
+                            placeholder="123ABC"
+                            className="bg-white/95 rounded-2xl lg:p-5 md:p-5 sm:p-5 text-left input-style-1 py-0"
                             name="input1"
-                            value={inputs.input1}
+                            value={otp}
                             onChange={handleInputChange}
                             required
                         />
-
-                        <input
-                            type="text"
-                            placeholder="6"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
-                            name="input2"
-                            value={inputs.input2}
-                            onChange={handleInputChange}
-                            required
-                        />
-
-                        <input
-                            type="text"
-                            placeholder="7"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
-                            name="input3"
-                            value={inputs.input3}
-                            onChange={handleInputChange}
-                            required
-                        />
-
-                        <input
-                            type="text"
-                            placeholder="M"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
-                            name="input4"
-                            value={inputs.input4}
-                            onChange={handleInputChange}
-                            required
-                        />
-
-                        <input
-                            type="text"
-                            placeholder="C"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
-                            name="input5"
-                            value={inputs.input5}
-                            onChange={handleInputChange}
-                            required
-                        />
-
-                         <input
-                            type="text"
-                            placeholder="E"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
-                            name="input6"
-                            value={inputs.input6}
-                            onChange={handleInputChange}
-                            required
-                        />
-
                     </div>
                 </div>
 
@@ -202,7 +151,7 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
                 <div className="text-center">
                     <ButtonComponent  name="Authenticate" setClassName="btn-type-3 btn-w-150" setOnClick={() => 
                     {
-                        const valid = OTP_LOGIC(combinedInputs);
+                        const valid = OTP_LOGIC(otp);
                         setIsOtpValid(valid)
                     }
                     } />
@@ -262,11 +211,11 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
                 }`}>
                    {isAdmin?
                         <>
-                            {<MessageComponent setIcon={"/" + ICONS.ERROR_ICON} setMessage="Not Admin Email"/>}
+                            {<MessageComponent setIcon={"/" + MATERIALS.ICONS.ERROR_ICON} setMessage="Not Admin Email"/>}
                         </>
                         :
                         <>
-                            {<MessageComponent setIcon={"/" + ICONS.ERROR_ICON} setMessage="Incorrect Email"/>}
+                            {<MessageComponent setIcon={"/" + MATERIALS.ICONS.ERROR_ICON} setMessage="Incorrect Email"/>}
                         </>
                     }
                 </div>
@@ -277,7 +226,7 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
                     :
                     "max-h-0 opacity-0 -translate-y-10 pointer-events-none"
                 }`}>
-                    {<MessageComponent setIcon={"/" + ICONS.ERROR_ICON} setMessage="Incorrect OTP"/>}
+                    {<MessageComponent setIcon={"/" + MATERIALS.ICONS.ERROR_ICON} setMessage="Incorrect OTP"/>}
                 </div>
             </div>
         </div>

@@ -73,6 +73,50 @@
     border-radius: 6px;
 }
 
+
+/* Button type round */
+.btn-type-round{
+    color: white;
+    padding: 12px;
+    border: solid lightgrey 1px;
+    background-color: #d6b049;
+    border-radius: 50px;
+
+}
+.btn-type-round:hover{
+    cursor: pointer;
+    background-color: #c1982b;
+    border: solid #d6b049 1px;
+    border-radius: 50px;
+}
+
+.sidebar-btn-type{
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f1f3f4;
+    border: solid #d6b049 1px;
+    border-radius: 6px;
+    color: #d6b049;
+    font-weight:600;
+}
+
+.sidebar-btn-type-active{
+    border: solid black 1px;
+}
+
+.sidebar-btn-type:hover{
+    border: solid black 1px;
+}
+
+.sidebar-logout{
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar-logout:hover{
+    text-decoration: underline;
+}
+
 /* Changes the size of the KBS Logo */
 .logo-size{
     width: 3rem;
@@ -92,6 +136,11 @@
     padding-top: 5px;
     font-size: x-large;
     color: gray;
+}
+
+.size-of-logo{
+    padding-top: 5px;
+   font-size: x-large; 
 }
 
 
@@ -236,6 +285,14 @@ picture{
     color: #d6b049;
 }
 
+.bg-color-gold{
+    background-color: #d6b049;
+}
+
+.bg-gold\/95 {
+  background-color: rgba(214, 176, 73, 0.95);
+}
+
 .active-nav-item{
     color:#d6b049;
     text-decoration: underline;
@@ -339,6 +396,12 @@ picture{
     width: 17.5rem; 
 }
 
+.input-style-2{
+    padding: 1rem;
+    border: 1px #D3D3D3 solid;
+    width: 12.5rem; 
+}
+
 .input-style-no-fx-w{
     border: 1px #D3D3D3 solid;
 }
@@ -433,9 +496,19 @@ picture{
     border: 1px solid lightgray;
 }
 
+.border-to-bottom-gray{
+    border-bottom: 1px solid lightgray;
+}
+
+.border-gray-2px{
+    border: 2px solid lightgray;
+}
+
 /* fade.css */
 .fade-out {
   opacity: 0;
   transition: opacity 0.5s ease-in;
 }
+
+
 

@@ -13,7 +13,7 @@ export default function TestimonialsComponent(){
             </h1>
             <div className="flex flex-col md:flex-row justify-center items-center py-20">
                 {/* COLUMN */}
-                <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+                <div className="w-full flex justify-center">
                     {/* CARD WRAPPER */}
                     <div className="bg-white/95 shadow-lg rounded-2xl p-6 text-center md:text-left mx-auto w-4/5">
                         <TestimonialCards />

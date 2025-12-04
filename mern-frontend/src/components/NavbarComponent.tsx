@@ -3,6 +3,7 @@ import LogoComponent from "./LogoComponent"
 import { ROUTES } from "../../utils/routes";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { MATERIALS } from "../../utils/materials";
 
 /**
  * Contains the set tailwind layout structure for the navbar.
@@ -114,7 +115,7 @@ export default function NavbarComponent({toggleList, setToggleList}: navbarProps
             <div className="flex items-center gap-8 w-full md:flex-1">
             {/* Logo */}
             <div className="shrink-0">
-                <LogoComponent setSRC="/src/assets/images/logos/KBS_Logo.jpg" setClassName="logo-size" />
+                <LogoComponent setSRC={"/" + MATERIALS.LOGOS.KBS} setClassName="logo-size" />
             </div>
 
             {/* Nav Items */}

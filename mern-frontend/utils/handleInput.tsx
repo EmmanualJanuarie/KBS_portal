@@ -1,26 +1,14 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 
 export const OTP_INPUT_FUNC = () => {
-     const [inputs, setInputs] = useState<{[key: string]: string}>({
-        input1: '', input2: '', input3: '',
-        input4: '', input5: '', input6: ''
-    });
+     const [otp, setOtp] = useState("");
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
-        const {name, value} = e.target;
-
-        setInputs((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+       const { value } = e.target;
+       setOtp(value);
     };
 
-    //combining inputs
-    const combinedInputs = useMemo(()=>{
-        return (inputs.input1 + inputs.input2 + inputs.input3 + inputs.input4 + inputs.input5 + inputs.input6);
-    }, [inputs]);
-
-    return { inputs, handleInputChange, combinedInputs}
+    return {otp, handleInputChange}
 }
 
 export const EMAIL_INPUT_FUNC = () => {

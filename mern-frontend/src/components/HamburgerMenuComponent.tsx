@@ -5,6 +5,7 @@
  * @returns tsx script for the hamburger layout
  */
 
+import { MATERIALS } from "../../utils/materials";
 import HamburgerIconComponent from "./HamburgerIcon";
 import LogoComponent from "./LogoComponent";
 
@@ -24,7 +25,7 @@ export default function HamburgerMenuComponent({toggle, setToggle}: HamburgerMen
                     <div className="flex items-center gap-20 w-full md:flex-1">
                         {/* LOGO */}
                         <div className="shrink-0">
-                            <LogoComponent setSRC="/src/assets/images/logos/KBS_Logo.jpg" setClassName="logo-size" />
+                            <LogoComponent setSRC={"/" + MATERIALS.LOGOS.KBS} setClassName="logo-size" />
                         </div>
 
                         {/* HAMBURGER ICON */}

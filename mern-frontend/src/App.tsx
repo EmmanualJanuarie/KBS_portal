@@ -10,7 +10,7 @@ import UserPage from '../pages/UserPage';
 import { ROUTES } from '../utils/routes'
 import WhatsappCodeComponent from './components/WhatsappCodeComponent';
 import PasswordChangeComponent from './components/PasswordResetOptionComponent';
-import { BACKGROUNDS } from '../utils/backgrounds'
+import { MATERIALS } from '../utils/materials'
 
 function App() {
 
@@ -28,7 +28,7 @@ function App() {
 
         <Route path={ROUTES.ADMIN_PAGE_WHATSAPP_CODE_REQUEST} element={
           <WhatsappCodeComponent 
-              page={{ backgroundImage: BACKGROUNDS.class.ADMIN_BACKGROUND}}
+              page={{ backgroundImage: MATERIALS.BACKGROUNDS.CLASSES.ADMIN_BACKGROUND}}
               tab={{ title: "Admin | WhatsApp Code"}}
               options={{ changeOptions: ROUTES.ADMIN_FORGET_PWD}}
               isAdmin={true}
@@ -37,7 +37,7 @@ function App() {
         
         <Route path={ROUTES.USER_PAGE_WHATSAPP_CODE_REQUEST} element={
           <WhatsappCodeComponent 
-              page={{ backgroundImage: BACKGROUNDS.class.USER_BACKGROUND }}
+              page={{ backgroundImage: MATERIALS.BACKGROUNDS.CLASSES.USER_BACKGROUND }}
               tab={{ title: "User | WhatsApp Code"}}
               options={{ changeOptions: ROUTES.USER_FORGET_PWD}}
               isAdmin={false}
@@ -45,14 +45,14 @@ function App() {
         }/>
         <Route path={ROUTES.ADMIN_PAGE_PASSWORD_RESET_REQUEST} element={
           <PasswordChangeComponent 
-              page={{ backgroundImage: BACKGROUNDS.class.ADMIN_BACKGROUND}}
+              page={{ backgroundImage: MATERIALS.BACKGROUNDS.CLASSES.ADMIN_BACKGROUND}}
               tab={{ title: "Admin | Password Reset"}}
               options={{ changeOptions: ROUTES.ADMIN_FORGET_PWD}}
               isAdmin={true} />
         }/>
         <Route path={ROUTES.USER_PAGE_PASSWORD_RESET_REQUEST} element={
           <PasswordChangeComponent 
-              page={{ backgroundImage: BACKGROUNDS.class.USER_BACKGROUND}}
+              page={{ backgroundImage: MATERIALS.BACKGROUNDS.CLASSES.USER_BACKGROUND }}
               tab={{ title: "User | Password Reset"}}
               options={{ changeOptions: ROUTES.USER_FORGET_PWD}}
               isAdmin={false} />

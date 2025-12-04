@@ -7,7 +7,7 @@
 
     import { Swiper, SwiperSlide } from "swiper/react";
     import { Autoplay, Navigation } from "swiper/modules";
-    import { ICONS } from "../../utils/icons";
+    import { MATERIALS } from "../../utils/materials";
     import 'swiper/css'
     import 'swiper/css/navigation'
     import rating from "../../utils/rating"
@@ -36,14 +36,15 @@ interface Client {
                 <div className="flex w-full gap-12 justify-center">
                     <div className="hover:text-yellow-500 course-header text-3xl ">
                         <picture>
-                            <img src={ICONS.QUOTATION_MARK_ICON} alt="quote icon image" className="w-16"/>
+                            <img src={MATERIALS.ICONS.QUOTATION_MARK_ICON} alt="quote icon image" className="w-16"/>
                         </picture>
                     </div>
                 </div>
 
-                <div className="flex w-full py-5 px-5 gap-12 justify-center">
+                <div className="flex w-full p-10 gap-12 justify-center items-center">
                     <Swiper
                         loop={true}
+                        centeredSlides={true}
                         speed={1200}
                         autoplay={{
                             delay: 3500,
@@ -77,18 +78,18 @@ interface Client {
                             spaceBetween: 24,
                             },
                         }}
-                        className="max-w-full"
+                        className="w-full"
                         >
                             {clients.map((client, index) =>(
                                 <SwiperSlide 
                                   key={index}
-                                  className="flex flex-col justify-between items-center p-6 h-[400px] max-w-[700px] text-center"
+                                  className="flex flex-col justify-center items-center p-6 text-center"
                                 >
                                     <div className="overflow-hidden text-ellipsis line-clamp-6 text-lg text-black">
                                         {client.feedback}
                                     </div>
 
-                                    <div className="flex justify-center ">
+                                    <div className="flex justify-center">
                                         {rating(client.rating)}
                                     </div>
 

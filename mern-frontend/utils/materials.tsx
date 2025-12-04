@@ -1,0 +1,37 @@
+export const MATERIALS ={
+    ICONS : {
+        DOUBLE_ARROW_ICON: "src/assets/images/icons/double_arrow_icon.png",
+        QUOTATION_MARK_ICON: "src/assets/images/icons/quote_icon.png",
+        NO_STAR_ICON: "src/assets/images/icons/no_star_rating_icon.png",
+        ONE_STAR_ICON: "src/assets/images/icons/one_star_rating_icon.png",
+        TWO_STAR_ICON: "src/assets/images/icons/two_star_rating_icon.png",
+        THREE_STAR_ICON: "src/assets/images/icons/three_star_rating_icon.png",
+        FOUR_STAR_ICON: "src/assets/images/icons/four_star_rating_icon.png",
+        FIVE_STAR_ICON: "src/assets/images/icons/five_star_rating_icon.png",
+        SOCIAL_MEDIA_X_ICON: "src/assets/images/icons/x_icon.png",
+        SOCIAL_MEDIA_INSTA_ICON: "src/assets/images/icons/instagram_icon.png",
+        SOCIAL_MEDIA_TIKTOK_ICON: "src/assets/images/icons/tiktok_icon.png",
+        SOCIAL_MEDIA_LINKEDIN_ICON: "src/assets/images/icons/linkedin_icon.png",
+        ERROR_ICON: "src/assets/images/icons/error_icon.png",
+        CORRECT_ICON: "src/assets/images/icons/correct_icon.png",
+        ADD_ICON: "src/assets/images/icons/add_icon.png"
+    },
+
+    BACKGROUNDS: {
+        PATHS: {
+            TESTIMONIAL_BACKGROUND: "src/assets/images/backgrounds/kbs_background_3.png",
+            ADMIN_BACKGROUND: "src/assets/images/backgrounds/kbs_background_1.png",
+            USER_BACKGROUND: "src/assets/images/backgrounds/kbs_background_5.png",
+            CONTACT_SUPPORT_BACKGROUND:"src/assets/images/backgrounds/kbs_background_4.png",
+        },
+
+        CLASSES: {
+           ADMIN_BACKGROUND: "background-one",
+           USER_BACKGROUND: "background-five", 
+        }
+    },
+
+    LOGOS: {
+        KBS: "src/assets/images/logos/KBS_Logo.jpg"
+    }
+}

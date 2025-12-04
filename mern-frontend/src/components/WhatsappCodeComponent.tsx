@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { EMAIL_INPUT_FUNC, OTP_INPUT_FUNC } from "../../utils/handleInput";
 import { IS_ADMIN_EMAIL, IS_USER_EMAIL, OTP_LOGIC} from "../../utils/authLogic";
 import MessageComponent from "./MessageComponent";
-import { ICONS } from "../../utils/icons";
+import { MATERIALS } from "../../utils/materials";
 import { ROUTES } from "../../utils/routes";
 
 /**
@@ -30,6 +30,8 @@ type wpCodeComponentProps = {
 }
 export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpCodeComponentProps){
 
+    
+
     const [toggleSection, setToggleSection] = useState(false);
     const navigate = useNavigate();
     const [otpMessage, setOTPMessage] = useState<string | null>(null);
@@ -42,7 +44,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
         const [isOtpValid, setIsOtpValid] = useState<boolean | null>(null);
     
         // Destructuring the OTP input function
-        const {inputs, handleInputChange, combinedInputs} = OTP_INPUT_FUNC();
+        const {otp, handleInputChange} = OTP_INPUT_FUNC();
     
         //To determine if email is valid
         const [isEmailValid, setIsEmailValid] = useState<boolean | null>(null);
@@ -121,62 +123,13 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
 
                     {/* CODE INPUT SECTION */}
                     <div className="flex flex-row gap-2">
+
                         <input
                             type="text"
-                            placeholder="1"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
+                            placeholder="XXXXXX"
+                            className="bg-white/95 rounded-2xl lg:p-5 md:p-5 sm:p-5 input-style-1 py-0 text-center"
                             name="input1"
-                            value={inputs.input1}
-                            onChange={handleInputChange}
-                            required
-                        />
-
-                        <input
-                            type="text"
-                            placeholder="2"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 lg:p-3 p-3"
-                            name="input2"
-                            value={inputs.input2}
-                            onChange={handleInputChange}
-                            required
-                        />
-
-                        <input
-                            type="text"
-                            placeholder="3"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
-                            name="input3"
-                            value={inputs.input3}
-                            onChange={handleInputChange}
-                            required
-                        />
-
-                        <input
-                            type="text"
-                            placeholder="W"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
-                            name="input4"
-                            value={inputs.input4}
-                            onChange={handleInputChange}
-                            required
-                        />
-
-                        <input
-                            type="text"
-                            placeholder="T"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
-                            name="input5"
-                            value={inputs.input5}
-                            onChange={handleInputChange}
-                            required
-                        />
-
-                         <input
-                            type="text"
-                            placeholder="C"
-                            className="bg-white/95 rounded-2xl text-center input-style-no-fx-w w-10 p-3"
-                            name="input6"
-                            value={inputs.input6}
+                            value={otp}
                             onChange={handleInputChange}
                             required
                         />
@@ -196,7 +149,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                 <div className="text-center">
                     <ButtonComponent  name="Authenticate" setClassName="btn-type-3 btn-w-150" setOnClick={() =>
                         {
-                            const valid = OTP_LOGIC(combinedInputs);
+                            const valid = OTP_LOGIC(otp);
                             setIsOtpValid(valid)
 
                              if(valid && isAdmin){
@@ -232,7 +185,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
 
         <div className={`${page.backgroundImage} w-full`} id="whatsapp_page">
             {/* COLUMN */}
-            <div className="flex flex-col items-center py-20 gap-2">
+            <div className="flex flex-col items-center py-30 md:py-60 lg:py-50 gap-2">
                 {/* REQUEST CODE FORM */}
                 <div className="bg-white/95 shadow-lg rounded-2xl p-10 items-center justify-center form-contactstaff">
                     <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center lg:gap-3 md:gap-3 sm:gap-3">
@@ -268,11 +221,11 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                 }`}>
                     {isAdmin?
                         <>
-                            {<MessageComponent setIcon={"/" + ICONS.ERROR_ICON} setMessage="Not Admin Email"/>}
+                            {<MessageComponent setIcon={"/" + MATERIALS.ICONS.ERROR_ICON} setMessage="Not Admin Email"/>}
                         </>
                         :
                         <>
-                            {<MessageComponent setIcon={"/" + ICONS.ERROR_ICON} setMessage="Incorrect Email"/>}
+                            {<MessageComponent setIcon={"/" + MATERIALS.ICONS.ERROR_ICON} setMessage="Incorrect Email"/>}
                         </>
                     }
                 </div>
@@ -283,7 +236,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                     :
                     "max-h-0 opacity-0 -translate-y-10 pointer-events-none"
                 }`}>
-                    {<MessageComponent setIcon={"/" + ICONS.ERROR_ICON} setMessage="Incorrect OTP"/>}
+                    {<MessageComponent setIcon={"/" + MATERIALS.ICONS.ERROR_ICON} setMessage="Incorrect OTP"/>}
                 </div>
 
                 <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
@@ -293,7 +246,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                     "max-h-0 opacity-0 -translate-y-10 pointer-events-none"
                 }`}>
                     {otpMessage && (
-                        <MessageComponent setIcon={"/" + ICONS.CORRECT_ICON} setMessage={otpMessage}/>
+                        <MessageComponent setIcon={"/" + MATERIALS.ICONS.CORRECT_ICON} setMessage={otpMessage}/>
                     )}
                 </div>
             </div>
