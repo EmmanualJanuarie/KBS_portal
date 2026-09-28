@@ -1,147 +1,50 @@
-# KBS-portal
-A dynamic platform built with the M.E.R.N stack that enables entrepreneurs and like-minded individuals to enroll in paid courses. This end-to-end application offers a modern, user-friendly interface with a vibrant, visually appealing design.
+# KBS Learning Portal — portfolio demo
 
-# Project Outline
-* Admin Portal
-    - Add Employees(Based on the corporate and Beneficiary discussions via email)
-    - Add new courses (PAID)
-    - Edit Added Courses
-    - No Downloadable content (Must) 
-    - Market Analysis (Show graphs and diagrams of the sales uses and etc)
-    - Manage Members (Admin accepts / rejects registed users to course)
-    - Add notification based on location, WhatsApp notifications (Events will only be showed to the Registerd users on the platform)
+An online learning portal concept for entrepreneurs, employees, and program beneficiaries. This project was originally built for a client who chose not to proceed with it. It is presented here as a portfolio demo of the product and frontend development work; the client did not launch or endorse this demo.
 
- 
-* Corporate Portal
-  - Self-Paced Learning (However the course expires, and they get notifications) / Upskilled Learning - Employee Upskill
-  - Add Animated Videos / Youtube - (This is for all courses)
-  - Corporate pays for course -> Assigns employess to course(Limited amount based on payment) -> employees limited duration
-  - Pay-as-use
-  - course expires (3/6 month duration)
- 
-* Program Beneficiaries
-  - Schedule Workshops(Select which courses will be utilized) - Beneficiaries pays for total
-  - only members from the beneficiaries can access the course, so they get only those courses when they login
-  - must be township friendly(whatsApp notifications)
-  - for courses there must be a post/pre assessment
-  - Impact Management - Do understanding assessments to track users/employees understanding
-  - Expiration based on how long they on the course
-  - Add new courses.
-  - Get's a summary  - Content Summary
- 
-* Course Layout
-    1. Pre-assessment (Surveys or summative assessment)
-    2. Content
-    3. Post Assessment (Formative Assessment)
-    4. Feedback/Rating
-    5. Grading
-    6. Download Certifiate
- 
-* Landing Page (Client - Side)
-  - Information about KBS Portal
-  - Testimonials
-  - Only Register Organisation and Login Employees
- 
+## Live demo
 
-# Project Folder & File Structure
-* MERN-FRONTEND
-   
+The public demo will be available at **https://emmanualjanuarie.github.io/KBS_portal/** after GitHub Pages is enabled for this repository and the first deployment completes.
 
-```plaintext
-frontend-rootfolder/
-│   ├── public /                 # index.html. favicon, static assets
-│   ├── src/
-│   │   ├── assets /             # images. icons, fonts
-│   │   └── components           # Resuseable UI Components(Buttons, Cards/Viewa)
-│   │       └── Button.jsx       # e.g 
-│   │
-│   ├── pages/                   # route-level Components(pages/views)
-│   │   ├── Home.jsx             # e.g
-│   │   ├── Login.jsx            # e.g
-│   │   └── Dashboard.jsx        # e.g
-│   │
-│   ├── hooks/                  # custom React Hooks
-│   │   └── useAuth.js          # e.g
-│   │
-│   ├── context/                # React Context, global state
-│   │   └── AuthContext.js      # e.g
-│   │               
-│   ├── services/               # API calls, axios instances
-│   │   └── userService.js      # e.g
-│   │
-│   ├── utils/                  # helper functions, Constants
-│   │    └── formatDate.js      # e.g
-│   │
-│   ├── App.js
-│   └── main.jsx
-│
-├── package.json
-├── vite.config.js
-└── tailwind.config.js
+Use the landing page buttons to open the sample learner dashboard and admin dashboard. Dashboard content is sample data. Authentication, payments, notifications, and server-side storage are not connected, so do not enter real personal information.
 
+## What you can explore
+
+- Public landing page with course information, FAQs, and testimonials
+- Learner dashboard with course and event views
+- Admin dashboard concept with course, assessment, event, resource, and metrics sections
+- Responsive layouts for desktop and mobile
+
+## Built with
+
+- React 19 and TypeScript
+- Vite
+- React Router
+- Tailwind CSS
+- Recharts
+
+This repository currently contains the frontend only. There is no deployed MERN backend or database.
+
+## Run locally
+
+Requirements: Node.js 20 or later and npm.
+
+```bash
+cd mern-frontend
+npm ci
+npm run dev
 ```
 
-* MERN-BACKEND
-   
+To create a production build:
 
-```plaintext
-backend-rootfolder/
-│   ├── controllers /            # logic for each route
-│   │   └── userController.js    # e.g
-│   │
-│   ├── models/                  # Mongoose Schemas
-│   │   └── userModel.js         # e.g  
-│   │
-│   ├── routes/                 # API routes definitions
-│   │   └── userRoutes.js       # e.g
-│   │               
-│   ├── middleware/             # custom middleware (auth, error handling)
-│   │   └── authMiddleware.js   # e.g
-│   │
-│   ├── utils/                  # helper functions (e.g generateToken.js)
-│   │    └── generateToken.js   # e.g
-│   │
-│   ├── config/                 # database or environment configs
-│   │    └──  db.js             # e.g
-│   └── main.jsx
-│
-├── .env
-├── server.js
-└── package.json
-
+```bash
+npm run build
 ```
 
+## Deployment
 
+GitHub Actions builds the frontend and publishes it to GitHub Pages when changes are pushed to `main`. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The workflow is in `.github/workflows/deploy-pages.yml`.
 
-# Software Versions
-* tailwindcss: version 4.1.13 (change to v3)
-  - use command: npm install -D tailwindcss postcss autoprefixer
-  - to reinstall previous version : npm install -D tailwindcss@3 postcss autoprefixer
+## Project history
 
-* React: version 19.1.1 
-* NodeJs: version 18+ , then npm === v10 (Install node v20)
-
-
-# How to run project
-  1. Download the project folder
-  2. cd project folder
-  3. npm install 
-  4. npm install -D tailwindcss postcss autoprefixer
-  5. npm run dev (this command rund the project in development environment)
-
-# Developers
-* Lead Developer: Emmanual R. Januarie (Github: https://github.com/EmmanualJanuarie)
-
-# Deployment
-  - Link: N/A
-
-# Versioning
-* The current version is **0.20.1 (initial development)**.
-* Future updates will be documented in the [Changelog](./CHANGELOG.md).
-
-# Notes For future developers
-* Please Update the [Changelog](./CHANGELOG.md).
-* Every typo update, patch or new feature please update the CHANGELOG.
-* Update the versioning on the Application and on the README.md File. 
-
-
+See [CHANGELOG.md](./CHANGELOG.md) for the development history.

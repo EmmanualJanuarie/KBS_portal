@@ -20,11 +20,11 @@ interface Client {
     // FIX: Temporary, please change with MongoDB Fetch API
     const clients: Client[]= [
         { fullname: "John Doe", 
-          feedback: "Lorem ipsum dolor sit amet,  magna aliqua. ullamco irure re eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+          feedback: "Sample testimonial copy shown to demonstrate the feedback carousel layout.",
           rating: "4",  
         },
         { fullname: "Jane Doe", 
-          feedback: "Lorem ipsum dolor sit amet,  . Excepteur sint occaecat cupidatat non proident, sunt in  occaecat cupidatat non proident, sunt in culpa  sunt in  occaecat cupidatat non proident, sunt in culpa qu  culpa qui officia deserunt mollit anim id est laborum",
+          feedback: "Placeholder feedback for the portfolio demo. No client testimonial is represented here.",
           rating: "5",  
         }
     ] 

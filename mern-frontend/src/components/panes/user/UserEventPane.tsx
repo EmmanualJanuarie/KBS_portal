@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import EventSkeleton from "../../skeleton-loaders/UserDashboard/EventSkeleton";
+import { ASSET_PATH } from "../../../../utils/materials";
 
 type Event = {
   id: string;
@@ -32,7 +33,7 @@ export default function UserEventPane() {
           address: "Convention Square, Cape Town",
           theme: "Entrepreneurship & Innovation",
           food: "Light snacks & refreshments provided",
-          image: "/images/event-business.jpg",
+          image: ASSET_PATH("stickers/interview_prep.png"),
           rsvp: false
         },
         {
@@ -44,7 +45,7 @@ export default function UserEventPane() {
           address: "87 Marine Drive, Port Elizabeth",
           theme: "Pitching, Funding & Growth",
           food: "Full catered lunch included",
-          image: "/images/event-startup.jpg",
+          image: ASSET_PATH("stickers/financial_Literacy.png"),
           rsvp: true
         }
       ]);

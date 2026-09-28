@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import CourseSkeleton from "../../skeleton-loaders/UserDashboard/CourseSkeleton";
+import { ASSET_PATH } from "../../../../utils/materials";
 
 type Course = {
   id: string;
@@ -22,14 +23,14 @@ export default function MyCoursesPane() {
           name: "Cyber Security Basics",
           description: "Learn fundamentals of cybersecurity.",
           progress: 25,
-          image: "/images/course-cyber.jpg",
+          image: ASSET_PATH("stickers/customer_service.png"),
         },
         {
           id: "2",
           name: "Fire Safety 101",
           description: "Basic fire safety training.",
           progress: 70,
-          image: "/images/course-fire.jpg",
+          image: ASSET_PATH("stickers/workplace_etiquette.png"),
         },
       ]);
       setLoading(false);

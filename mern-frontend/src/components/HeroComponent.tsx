@@ -24,9 +24,11 @@ export default function HeroComponent(){
           Empowering businesses, teams, and ambitious individuals with paid courses, 
           workshops, and actionable learning insights for measurable success.
         </h2>
-        <div className="mt-6">
-          <ButtonComponent name="Get Started" setClassName="btn-type-3" setOnClick={() => navigate(ROUTES.USER_PAGE)} />
+        <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-3">
+          <ButtonComponent name="Explore learner demo" setClassName="btn-type-3" setOnClick={() => navigate(ROUTES.USER_DASHBOARD)} />
+          <ButtonComponent name="Explore admin demo" setClassName="btn-type-2" setOnClick={() => navigate(ROUTES.ADMIN_DASHBOARD)} />
         </div>
+        <p className="mt-3 text-sm text-gray-500">Portfolio demo with sample data. Sign-in and backend services are not connected.</p>
       </div>
     </div>
 

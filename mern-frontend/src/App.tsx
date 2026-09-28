@@ -15,7 +15,7 @@ import { MATERIALS } from '../utils/materials'
 function App() {
 
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path={ROUTES.LANDING_PAGE} element={<LandingPage />} />
         <Route path={ROUTES.ADMIN_PAGE} element={<AdminConsolePage />} />

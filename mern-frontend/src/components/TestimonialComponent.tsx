@@ -9,7 +9,7 @@ export default function TestimonialsComponent(){
     return(
          <div className="w-full px-5 py-10">
             <h1 className="text-white font-bold text-center text-6xl px-2 py-8">
-                <span className="heading-background-effect-1 px-5 py-5">Our Client Feedback</span>
+                <span className="heading-background-effect-1 px-5 py-5">Sample Testimonials</span>
             </h1>
             <div className="flex flex-col md:flex-row justify-center items-center py-20">
                 {/* COLUMN */}

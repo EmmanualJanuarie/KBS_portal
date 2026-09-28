@@ -7,7 +7,7 @@ import AdminDashboardLoader from "../src/components/skeleton-loaders/AdminDashbo
 export default function AdminDashboardPage(){
     const [selectedSection, setSelectedSection] = useState<string>(() => {
         //load localstorage if aviable
-        return localStorage.getItem("selectedSection") || "Metrics";
+        return localStorage.getItem("adminSelectedSection") || "Metrics";
     });
 
     const [loading, setLoading] = useState(true);
@@ -23,7 +23,7 @@ export default function AdminDashboardPage(){
 
     //whenever the user changes the section it saves to local
     useEffect(()=>{
-        localStorage.setItem("selectedSection", selectedSection);
+        localStorage.setItem("adminSelectedSection", selectedSection);
     }, [selectedSection]);
 
     if(loading) {

@@ -10,6 +10,7 @@
     import 'swiper/css'
     import 'swiper/css/navigation'
     import CourseCardComponent from "../CourseCardComponent";
+    import { ASSET_PATH } from "../../../utils/materials";
 
 
     // Creates/ assigns datatypes to objects
@@ -24,27 +25,27 @@
         { title: "Customer Service", category: "Corporate", 
           heading: "Build a Professional Image with Strong Customer Service Skills",
           subHeading: "Learn customer-focused communication, problem-solving, and service skills that build trust, loyalty, and lasting relationships.",
-          image: "/src/assets/images/stickers/customer_service.png"    
+          image: ASSET_PATH("stickers/customer_service.png")
         },
         { title: "Financial Literacy", category: "Corporate", 
           heading: "Master your money with Essential Financial Literacy Skills.",
           subHeading: "Gain the knowledge to budget smart, maange debt, and build long-term wealth with confidence.",
-          image: "/src/assets/images/stickers/financial_Literacy.png"    
+          image: ASSET_PATH("stickers/financial_Literacy.png")
         },
         { title: "Interview Preparation", category: "Work Shop", 
           heading: "Workshop: Master Confidence and Communication",
           subHeading: "Practice real interview scenarios, sharpen your responses, and build the confidence to impress any employer.",
-          image: "/src/assets/images/stickers/interview_prep.png"    
+          image: ASSET_PATH("stickers/interview_prep.png")
         },
         { title: "Workplace Etiquette", category: "Work Shop", 
           heading: "Master Professional Etiquette for a Respectful and Thriving Workplace",
           subHeading: "Learn key workplace habits, communication skills, and professional practices that build respect, teamwork, and career success.",
-          image: "/src/assets/images/stickers/workplace_etiquette.png"    
+          image: ASSET_PATH("stickers/workplace_etiquette.png")
         },
         { title: "CV Drafting", category: "Work Shop", 
           heading: "Hands-On CV Drafting Workshop: Build Your Career-Ready Resume",
           subHeading: "Work step-by-step to create a polished CV that impresses employers and increases your interview opportunities.",
-          image: "/src/assets/images/stickers/cv_drafting.png"    
+          image: ASSET_PATH("stickers/cv_drafting.png")
         }
     ] 
 
@@ -119,4 +120,4 @@
             </div>
         );
 
-    } 
+    }

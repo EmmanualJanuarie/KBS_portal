@@ -7,7 +7,7 @@ import DashboardUserTitleBoard from "../src/components/dashboard/DashboardUserTi
 export default function UserDashboardPage(){
     const [selectedSection, setSelectedSection] = useState<string>(() => {
         //load localstorage if aviable
-        return localStorage.getItem("selectedSection") || "My Courses";
+        return localStorage.getItem("userSelectedSection") || "My Courses";
     });
 
     const [loading, setLoading] = useState(true);
@@ -23,7 +23,7 @@ export default function UserDashboardPage(){
 
     //whenever the user changes the section it saves to local
     useEffect(()=>{
-        localStorage.setItem("selectedSection", selectedSection);
+        localStorage.setItem("userSelectedSection", selectedSection);
     }, [selectedSection]);
 
     if(loading) {

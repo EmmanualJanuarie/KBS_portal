@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import LessonSkeleton from "../../skeleton-loaders/UserDashboard/LessonSkeleton";
+import { ASSET_PATH } from "../../../../utils/materials";
 
 type Lesson = {
   id: string;
@@ -51,7 +52,7 @@ export default function CourseDetailPane() {
         {/* Thumbnail */}
         <div className="w-full md:w-1/4 h-40 md:h-full overflow-hidden rounded-lg">
           <img
-            src="/images/course-business.jpg"
+            src={ASSET_PATH("stickers/cv_drafting.png")}
             alt="course thumbnail"
             className="w-full h-full object-cover"
           />

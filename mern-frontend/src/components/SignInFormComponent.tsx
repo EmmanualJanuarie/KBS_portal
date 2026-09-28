@@ -21,7 +21,8 @@ export default function SignInFormComponent({setFormTitle, setForgetPwdLink}: si
             <div className="bg-white/95 shadow-lg rounded-2xl p-10 items-center justify-center form-signin">
                 <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center gap-10">
                     <div className="text-4xl font-bold color-gold text-center">{setFormTitle}</div>
-                    <form>
+                    <p className="mb-4 text-center text-sm text-gray-500">Sign-in is not connected in this portfolio demo. Use the dashboard demo buttons on the home page instead.</p>
+                    <form onSubmit={(event) => event.preventDefault()}>
                         {/* INNER COLUMN */}
                         <div className="flex flex-col md:flex md:flex-col sm:flex sm:flex-col justify-center gap-10">
                             {/* EMAIL INPUT */}
@@ -56,7 +57,7 @@ export default function SignInFormComponent({setFormTitle, setForgetPwdLink}: si
 
                             {/* SIGNIN BUTTON */}
                             <div className="text-center">
-                                <ButtonComponent  name="Sign In" setClassName="btn-type-3 btn-w-150" setOnClick={alert} />
+                                <ButtonComponent name="Sign In" setClassName="btn-type-3 btn-w-150" setOnClick={() => window.alert("Sign-in is not connected in this portfolio demo.")} />
                             </div>
                         </div>
                     </form> 

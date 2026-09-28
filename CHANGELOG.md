@@ -1,4 +1,9 @@
 # Changelog
+### [0.29.0] - 2026-09-29
+### Added
+- Portfolio demo links for the sample learner and admin dashboards
+- GitHub Pages deployment workflow and project documentation
+
 ### [0.28.1] - 2025-11-17
 ### Fixed
 - Admin Pane Responsive issue (Table was the problem ~ sol: changed the table for mobile and tab into cards)
