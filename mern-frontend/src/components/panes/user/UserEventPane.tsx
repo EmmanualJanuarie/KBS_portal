@@ -27,7 +27,7 @@ export default function UserEventPane() {
         {
           id: "1",
           title: "Business Networking Summit",
-          date: "2025-12-10",
+          date: "2026-11-10",
           time: "10:00 AM – 3:00 PM",
           venue: "Cape Town Convention Centre",
           address: "Convention Square, Cape Town",
@@ -39,10 +39,10 @@ export default function UserEventPane() {
         {
           id: "2",
           title: "Startup Pitch Day",
-          date: "2025-12-15",
+          date: "2026-11-18",
           time: "12:00 PM – 5:00 PM",
           venue: "KBS Innovation Hub",
-          address: "87 Marine Drive, Port Elizabeth",
+          address: "87 Marine Drive, Gqeberha",
           theme: "Pitching, Funding & Growth",
           food: "Full catered lunch included",
           image: ASSET_PATH("stickers/financial_Literacy.png"),

@@ -39,7 +39,7 @@ export default function HorizontalBarChart({ graphHeading, data }: HorizontalBar
                 <LabelList 
                   dataKey="passRate" 
                   position="right" 
-                  formatter={(value: any) => `${value ?? 0}%`} 
+                  formatter={(value) => `${value ?? 0}%`}
                 />
               </Bar>
             </BarChart>

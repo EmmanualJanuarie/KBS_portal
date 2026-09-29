@@ -4,19 +4,27 @@ import CourseButtons from "../CourseButtons";
 import NewAssessmentForm from "./NewAssessmentForm";
 import type { Question } from "../types";
 
+type EditableCourse = {
+  courseName: string;
+  courseDes: string;
+  courseAuthor: string;
+  courseImage?: string;
+};
+
 type NewCourseProps = {
   onClose: () => void;
+  initialCourse?: EditableCourse;
   onSaveCourse?: (course: {
     courseName: string;
     courseDes: string;
     courseAuthor: string;
     courseImage?: string;
-    modules?: any[];
+    modules?: { moduleName: string; moduleContent: string }[];
     assessments?: Question[];
   }) => void;
 };
 
-export default function NewCourse({ onClose, onSaveCourse }: NewCourseProps) {
+export default function NewCourse({ onClose, onSaveCourse, initialCourse }: NewCourseProps) {
   const [toggleModule, setToggleModule] = useState(false);
   const [toggleAssessment, setToggleAssessment] = useState(false);
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -26,12 +34,12 @@ export default function NewCourse({ onClose, onSaveCourse }: NewCourseProps) {
   });
 
   const [formData, setFormData] = useState({
-    courseName: "",
-    courseDes: "",
-    courseAuthor: "",
+    courseName: initialCourse?.courseName ?? "",
+    courseDes: initialCourse?.courseDes ?? "",
+    courseAuthor: initialCourse?.courseAuthor ?? "",
   });
 
-  const [courseImage, setCourseImage] = useState<string | null>(null);
+  const [courseImage, setCourseImage] = useState<string | null>(initialCourse?.courseImage ?? null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -83,7 +91,7 @@ const handleSaveCourse = () => {
     <div className="flex bg-white border-to-bottom-gray p-8 w-full justify-center items-center">
       <div className="bg-white/95 shadow-lg rounded-2xl p-4 sm:p-8 w-full max-w-full sm:max-w-lg md:max-w-xl mx-4 sm:mx-auto input-style-no-fx-w">
         <h1 className="text-4xl font-bold color-gold text-center mb-10 ">
-          Create Course
+          {initialCourse ? "Edit Course" : "Create Course"}
         </h1>
 
         <form className="flex flex-col gap-10">
@@ -165,10 +173,7 @@ const handleSaveCourse = () => {
 
           {/* MODULE FORM */}
           {toggleModule && (
-            <NewModuleForm
-              onCancel={() => setToggleModule(false)}
-              onAddAssessment={() => setToggleAssessment(true)}
-            />
+            <NewModuleForm />
           )}
 
           {/* ASSESSMENT FORM */}

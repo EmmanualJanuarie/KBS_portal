@@ -20,6 +20,7 @@ const inputData: Data[] = [
 export default function NewUserModal(){
     const [password, setPassword] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
+    const [status, setStatus] = useState("");
 
     const generatePassword = () => {
 		const randomPass = Math.random().toString(36).slice(-10); 
@@ -35,7 +36,8 @@ export default function NewUserModal(){
 					New User
 				</h2>
 
-				<form className="grid grid-cols-1 gap-6">
+				<p className="mb-4 text-center text-sm text-gray-600">Demo form only. Submissions are not sent or saved.</p>
+				<form className="grid grid-cols-1 gap-6" onSubmit={(event) => { event.preventDefault(); setStatus("Preview complete. No account was created or data saved."); }}>
 
 					{/* Dynamic Inputs */}
 					{inputData.map((input, index) => (
@@ -103,6 +105,7 @@ export default function NewUserModal(){
 					>
 						Add User
 					</button>
+					{status && <p role="status" className="text-center text-sm text-gray-600">{status}</p>}
 
 				</form>
 			</div>

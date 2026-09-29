@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
 import LessonSkeleton from "../../skeleton-loaders/UserDashboard/LessonSkeleton";
 import { ASSET_PATH } from "../../../../utils/materials";
+import type { UserDemoCourse } from "./MyCoursesPane";
+
+const DEFAULT_COURSE: UserDemoCourse = {
+  id: "sample-course",
+  name: "Entrepreneurship & Small Business Management",
+  description: "Learn how to build, launch, and scale a successful business with practical strategies and real-world principles.",
+  progress: 20,
+  image: ASSET_PATH("stickers/cv_drafting.png"),
+};
 
 type Lesson = {
   id: string;
@@ -8,7 +17,8 @@ type Lesson = {
   completed: boolean;
 };
 
-export default function CourseDetailPane() {
+export default function CourseDetailPane({ course }: { course: UserDemoCourse | null }) {
+  const selectedCourse = course ?? DEFAULT_COURSE;
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -16,17 +26,15 @@ export default function CourseDetailPane() {
     setLoading(true);
 
     // Fetch mock: Replace with API later
-    setTimeout(() => {
-      setLessons([
-        { id: "1", title: "Introduction to Entrepreneurship", completed: true },
-        { id: "2", title: "How to Start a Small Business", completed: false },
-        { id: "3", title: "Managing Finances & Cashflow", completed: false },
-        { id: "4", title: "Marketing & Customer Acquisition", completed: false },
-        { id: "5", title: "Scaling Your Business", completed: false },
-      ]);
+    const timer = setTimeout(() => {
+      const lessonTitles = selectedCourse.name === "Business Planning & Growth"
+        ? ["Shape Your Business Idea", "Build a Practical Business Plan", "Plan Your Finances", "Find Your First Customers", "Measure and Grow"]
+        : ["Introduction to Entrepreneurship", "How to Start a Small Business", "Managing Finances & Cashflow", "Marketing & Customer Acquisition", "Scaling Your Business"];
+      setLessons(lessonTitles.map((title, index) => ({ id: String(index + 1), title, completed: index === 0 })));
       setLoading(false);
     }, 1000);
-  }, []);
+    return () => clearTimeout(timer);
+  }, [selectedCourse.name]);
 
   const toggleComplete = (id: string) => {
     setLessons(prev =>
@@ -52,8 +60,8 @@ export default function CourseDetailPane() {
         {/* Thumbnail */}
         <div className="w-full md:w-1/4 h-40 md:h-full overflow-hidden rounded-lg">
           <img
-            src={ASSET_PATH("stickers/cv_drafting.png")}
-            alt="course thumbnail"
+            src={selectedCourse.image}
+            alt={selectedCourse.name}
             className="w-full h-full object-cover"
           />
         </div>
@@ -62,25 +70,24 @@ export default function CourseDetailPane() {
         <div className="flex flex-col justify-between flex-1">
           <div>
             <h1 className="text-2xl font-bold text-kbs-blue">
-              Entrepreneurship & Small Business Management
+              {selectedCourse.name}
             </h1>
 
             <p className="text-gray-600 mt-2 text-sm md:text-base">
-              Learn how to build, launch, and scale a successful business with 
-              practical strategies and real-world principles.
+              {selectedCourse.description}
             </p>
           </div>
 
           {/* Progress */}
           <div className="mt-4">
             <p className="text-sm text-gray-700 mb-1 font-medium">
-              {progress}% Completed
+              {loading ? "Loading progress…" : `${progress}% Completed`}
             </p>
 
             <div className="w-full bg-gray-200 rounded-full h-3">
               <div
                 className="bg-gold/95 h-3 rounded-full transition-all"
-                style={{ width: `${progress}%` }}
+                style={{ width: `${loading ? 0 : progress}%` }}
               />
             </div>
           </div>

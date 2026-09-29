@@ -23,18 +23,17 @@ export default function AdminPane(){
         return () => clearTimeout(timer);
     }, []);
 
-    const handleOpen = (state: any) =>{
-        setOpenModal(prev => prev === state? null: state);
+    const handleOpen = (state: string) =>{
+        setOpenModal(prev => prev === state ? "" : state);
     }
 
     interface Data {
-        name:string; surname:string; email:string;cell_num: number; pwd: string;
-        role:string; auth_code: number; expire: Date; isOnline: boolean;
+        name:string; surname:string; email:string; role:string; expire: Date; isOnline: boolean;
     }
     const tableEntries:Data[] = [
-        {name: "John", surname: "Doe", email: "johnd@gmail.com", cell_num: 1234567890, pwd: "KBS_portal@J0hn-25", role: "user", auth_code: 189456, expire: new Date("2025-12-12"), isOnline: true},
-        {name: "Jane", surname: "Doe", email: "janed@gmail.com",  cell_num: 1234567890, pwd: "KBS_portal@J@ne-25", role: "admin", auth_code: 189456, expire: new Date("2025-12-1"), isOnline: false},
-        {name: "Anela", surname: "Mahamba", email: "anelam@korebusinessoluitions.co.za", cell_num: 1234567890, pwd: "admin@pwd", role: "admin", auth_code: 189456, expire:new Date("2025-1-12"), isOnline: true},
+        {name: "Alex", surname: "Morgan", email: "learner.one@example.com", role: "Learner", expire: new Date("2026-12-31"), isOnline: true},
+        {name: "Sam", surname: "Jordan", email: "learner.two@example.com", role: "Learner", expire: new Date("2026-11-30"), isOnline: false},
+        {name: "Riley", surname: "Taylor", email: "admin.demo@example.com", role: "Admin", expire: new Date("2026-10-31"), isOnline: true},
     ];
 
 
@@ -57,6 +56,7 @@ export default function AdminPane(){
                  <div className="flex bg-gold/96 p-10 w-full justify-center">
                 {/* TABLET/ DESKTOP TABLE */}
                 <div className="hidden lg:block shadow-xl rounded-xl w-full max-w-5xl">
+                    <p className="mb-3 text-sm text-white">Sample records only. Passwords and access codes are never displayed.</p>
                     <table className="w-full border-collapse bg-white rounded-xl overflow-hidden">
                         {/* TABLE CONTENT */}
                         <thead className="bg-gray-100 text-gray-800 uppercase text-sm font-semibold">
@@ -64,10 +64,7 @@ export default function AdminPane(){
                                 <th className="px-6 py-4 text-left">Name</th>
                                 <th className="px-6 py-4 text-left">Surname</th>
                                 <th className="px-6 py-4 text-left">Email</th>
-                                <th className="px-6 py-4 text-left">Cell_Number</th>
-                                <th className="px-6 py-4 text-left">Password</th>
                                 <th className="px-6 py-4 text-left">Role</th>
-                                <th className="px-6 py-4 text-left">Auth_Code</th>
                                 <th className="px-6 py-4 text-left">Expire</th>
                                 <th className="px-6 py-4 text-left">Status</th>
                             </tr>
@@ -79,10 +76,7 @@ export default function AdminPane(){
                                 <td className="px-6 py-4">{td.name}</td>
                                 <td className="px-6 py-4">{td.surname}</td>
                                 <td className="px-6 py-4 break-words max-w-[150px] truncate" title={td.email}>{td.email}</td>
-                                <td className="px-6 py-4">{td.cell_num}</td>
-                                <td className="px-6 py-4" title={td.pwd}>{td.pwd}</td>
                                 <td className="px-6 py-4">{td.role}</td>
-                                <td className="px-6 py-4">{td.auth_code}</td>
                                 <td className="px-6 py-4" title={`${td.expire.getDate()}-${months(td.expire.getMonth()+1)}-${td.expire.getFullYear()}`}>{`${td.expire.getDate()}-${months(td.expire.getMonth()+1)}-${td.expire.getFullYear()}`}</td>
                                 <td className="px-6 py-4">{td.isOnline? 
                                     <>
@@ -127,28 +121,10 @@ export default function AdminPane(){
                                     <span className="break-words max-w-[150px] truncate">{td.email}</span>
                                 </div>
 
-                                {/* CELL_NUM CELL */}
-                                <div className="flex justify-between items-start gap-6">
-                                    <span className="semi-bold">Cell No.</span>
-                                    <span className="">{td.cell_num}</span>
-                                </div>
-
-                                {/* PWD CELL */}
-                                <div className="flex justify-between items-start gap-6">
-                                    <span className="semi-bold">Password:</span>
-                                    <span className="">{td.pwd}</span>
-                                </div>
-
                                 {/* ROLE CELL */}
                                 <div className="flex justify-between items-start gap-6">
                                     <span className="semi-bold">Role:</span>
                                     <span className="">{td.role}</span>
-                                </div>
-
-                                {/* AUTH_CODE CELL */}
-                                <div className="flex justify-between items-start gap-6">
-                                    <span className="semi-bold">Auth Code:</span>
-                                    <span className="">{td.auth_code}</span>
                                 </div>
 
                                 {/* EXPIRE CELL */}

@@ -211,11 +211,11 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
                 }`}>
                    {isAdmin?
                         <>
-                            {<MessageComponent setIcon={"/" + MATERIALS.ICONS.ERROR_ICON} setMessage="Not Admin Email"/>}
+                            {<MessageComponent setIcon={MATERIALS.ICONS.ERROR_ICON} setMessage="Not Admin Email"/>}
                         </>
                         :
                         <>
-                            {<MessageComponent setIcon={"/" + MATERIALS.ICONS.ERROR_ICON} setMessage="Incorrect Email"/>}
+                            {<MessageComponent setIcon={MATERIALS.ICONS.ERROR_ICON} setMessage="Incorrect Email"/>}
                         </>
                     }
                 </div>
@@ -226,7 +226,7 @@ export default function PasswordResetOptionComponent({ page, tab, options, isAdm
                     :
                     "max-h-0 opacity-0 -translate-y-10 pointer-events-none"
                 }`}>
-                    {<MessageComponent setIcon={"/" + MATERIALS.ICONS.ERROR_ICON} setMessage="Incorrect OTP"/>}
+                    {<MessageComponent setIcon={MATERIALS.ICONS.ERROR_ICON} setMessage="Incorrect OTP"/>}
                 </div>
             </div>
         </div>

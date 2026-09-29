@@ -19,7 +19,7 @@ export default function AdminDashboardPage(){
             setLoading(false);
         }, 1500); // 1.5 seconds loading
         return () => clearTimeout(timer);
-    });
+    }, []);
 
     //whenever the user changes the section it saves to local
     useEffect(()=>{

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import CourseSkeleton from "../../skeleton-loaders/UserDashboard/CourseSkeleton";
 import { ASSET_PATH } from "../../../../utils/materials";
 
-type Course = {
+export type UserDemoCourse = {
   id: string;
   name: string;
   description: string;
@@ -10,8 +10,12 @@ type Course = {
   image: string;
 };
 
-export default function MyCoursesPane() {
-  const [courses, setCourses] = useState<Course[]>([]);
+type MyCoursesPaneProps = {
+  onOpenCourse: (course: UserDemoCourse) => void;
+};
+
+export default function MyCoursesPane({ onOpenCourse }: MyCoursesPaneProps) {
+  const [courses, setCourses] = useState<UserDemoCourse[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,15 +24,15 @@ export default function MyCoursesPane() {
       setCourses([
         {
           id: "1",
-          name: "Cyber Security Basics",
-          description: "Learn fundamentals of cybersecurity.",
+          name: "Entrepreneurship & Small Business Management",
+          description: "Build, launch, and grow a successful small business.",
           progress: 25,
           image: ASSET_PATH("stickers/customer_service.png"),
         },
         {
           id: "2",
-          name: "Fire Safety 101",
-          description: "Basic fire safety training.",
+          name: "Business Planning & Growth",
+          description: "Turn a business idea into a practical growth plan.",
           progress: 70,
           image: ASSET_PATH("stickers/workplace_etiquette.png"),
         },
@@ -81,10 +85,10 @@ export default function MyCoursesPane() {
 
               {/* Action Buttons */}
               <div className="p-4 flex flex-row md:flex-col gap-2 justify-end md:justify-center">
-                <button className="btn-type-3 px-4 py-2 rounded-lg w-full md:w-auto">
+                <button onClick={() => onOpenCourse(course)} className="btn-type-3 px-4 py-2 rounded-lg w-full md:w-auto">
                   Go to Course
                 </button>
-                <button className="btn-type-2 px-4 py-2 rounded-lg w-full md:w-auto">
+                <button onClick={() => setCourses((current) => current.filter((item) => item.id !== course.id))} className="btn-type-2 px-4 py-2 rounded-lg w-full md:w-auto">
                   Unenroll
                 </button>
               </div>

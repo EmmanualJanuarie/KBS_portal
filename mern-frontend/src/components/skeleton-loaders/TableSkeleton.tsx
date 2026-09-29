@@ -20,10 +20,7 @@ export default function TableSkeleton() {
                 "Name",
                 "Surname",
                 "Email",
-                "Cell_Number",
-                "Password",
                 "Role",
-                "Auth_Code",
                 "Expire",
                 "Status",
               ].map((_, idx) => (
@@ -41,7 +38,7 @@ export default function TableSkeleton() {
                 key={rowIndex}
                 className="border-b hover:bg-gray-50 transition"
               >
-                {Array.from({ length: 9 }).map((_, colIndex) => (
+                {Array.from({ length: 7 }).map((_, colIndex) => (
                   <td key={colIndex} className="px-6 py-4">
                     <div className={`h-4 w-24 rounded-md ${shimmer}`} />
                   </td>
@@ -65,10 +62,7 @@ export default function TableSkeleton() {
                 "Name",
                 "Surname",
                 "Email",
-                "Cell No.",
-                "Password",
                 "Role",
-                "Auth Code",
                 "Expire",
                 "Status",
               ].map((label, index) => (

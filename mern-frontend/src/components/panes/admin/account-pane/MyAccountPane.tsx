@@ -9,7 +9,7 @@ import { useState } from "react";
 
 export default function MyAccountPane() {
   const [name, setName] = useState("John Doe");
-  const [email, setEmail] = useState("admin@kbs.com");
+  const [email, setEmail] = useState("admin@example.com");
   const [phone, setPhone] = useState("082-123-4567");
 
   const [newPassword, setNewPassword] = useState("");

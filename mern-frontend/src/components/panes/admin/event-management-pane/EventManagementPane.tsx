@@ -72,7 +72,7 @@ export default function EventManagementPane() {
           location: "Cape Town",
           venue: "WeWork Waterfront",
           theme: "Entrepreneurship & Tech",
-          date: "2025-12-10",
+          date: "2026-11-10",
           food: "Provided",
           category: "Networking",
         },
@@ -80,10 +80,10 @@ export default function EventManagementPane() {
           id: 2,
           title: "Startup Pitch Day",
           description: "Pitch your startup idea to investors",
-          location: "Port Elizabeth",
+          location: "Gqeberha",
           venue: "Nelson Mandela University",
           theme: "Startup Growth & Investment",
-          date: "2025-12-15",
+          date: "2026-11-18",
           food: "BYO",
           category: "Pitch",
         },
@@ -246,7 +246,7 @@ export default function EventManagementPane() {
 
             {/* Mobile Cards */}
             <div className="flex flex-col gap-4 lg:hidden">
-              {events.map((ev, _) => (
+              {events.map((ev) => (
                 <div
                   key={ev.id}
                   className="border rounded-xl bg-white p-4 shadow-sm flex flex-col gap-3"

@@ -3,6 +3,7 @@ import { MATERIALS } from "../utils/materials";
 import AdminDashboardLoader from "../src/components/skeleton-loaders/AdminDashboardSkelton/AdminDashboardLoader";
 import UserDashboardContentPane from "../src/components/dashboard/UserDashboardContentPane";
 import DashboardUserTitleBoard from "../src/components/dashboard/DashboardUserTitleBoard";
+import type { UserDemoCourse } from "../src/components/panes/user/MyCoursesPane";
 
 export default function UserDashboardPage(){
     const [selectedSection, setSelectedSection] = useState<string>(() => {
@@ -11,6 +12,7 @@ export default function UserDashboardPage(){
     });
 
     const [loading, setLoading] = useState(true);
+    const [selectedCourse, setSelectedCourse] = useState<UserDemoCourse | null>(null);
  
     useEffect(()=>{
         document.title= "User | Dashboard"
@@ -19,7 +21,7 @@ export default function UserDashboardPage(){
             setLoading(false);
         }, 1500); // 1.5 seconds loading
         return () => clearTimeout(timer);
-    });
+    }, []);
 
     //whenever the user changes the section it saves to local
     useEffect(()=>{
@@ -42,7 +44,12 @@ export default function UserDashboardPage(){
 
                 {/* USER CONTENT PANE */}
                 <div className="flex-1 overflow-auto">
-                    <UserDashboardContentPane id={selectedSection} />
+                    <UserDashboardContentPane
+                        id={selectedSection}
+                        onSelectSection={setSelectedSection}
+                        onSelectCourse={setSelectedCourse}
+                        selectedCourse={selectedCourse}
+                    />
                 </div>
            </div>
         </div>

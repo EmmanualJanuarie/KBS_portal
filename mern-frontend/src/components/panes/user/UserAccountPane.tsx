@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export default function UserAccountPane() {
-  const [name, setName] = useState("Jane Doe");
-  const [email, setEmail] = useState("user@example.com");
-  const [phone, setPhone] = useState("082-987-6543");
+  const [name, setName] = useState("Demo Learner");
+  const [email, setEmail] = useState("learner@example.com");
+  const [phone, setPhone] = useState("000-000-0000");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 

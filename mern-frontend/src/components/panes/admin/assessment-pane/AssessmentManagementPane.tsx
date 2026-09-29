@@ -248,7 +248,7 @@ export default function AssessmentManagementPane() {
 
         {/* MOBILE CARD VIEW */}
         <div className="md:hidden flex flex-col gap-4">
-          {courses.map((course, _) => {
+          {courses.map((course) => {
             const courseAssessments = assessments.filter(a => a.courseName === course);
             const individualUsers = courseAssessments.filter(a => !a.company);
             const companies = Array.from(new Set(courseAssessments.filter(a => a.company).map(a => a.company!)));

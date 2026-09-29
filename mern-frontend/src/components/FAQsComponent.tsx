@@ -10,9 +10,9 @@ import { useState } from "react";
 export default function FAQsComponent(){
 
       const faqs = [
-        {question: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur?", answer: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
-        {question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor aliqua? ", answer: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque."},
-        {question: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat?", answer: "ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia."}
+        {question: "Who is the portal designed for?", answer: "The concept supports entrepreneurs, employees, and program beneficiaries who need access to courses and workshops."},
+        {question: "How does course access work?", answer: "An organization or program can assign courses and set an access period for each learner."},
+        {question: "Can I track course progress?", answer: "The demo shows sample course progress, assessments, and learning metrics. Live accounts and saved progress require a connected backend."}
     ]
 
     const [openIndex, setOpenIndex] = useState<number | null>(null);

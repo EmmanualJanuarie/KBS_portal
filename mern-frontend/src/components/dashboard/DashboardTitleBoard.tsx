@@ -21,7 +21,7 @@ export default function DashboardTitleBoard({dashboardType, activeSection, setOn
                  <div className="flex flex-row justify-center gap-10 ">
                     {/* Logo */}
                     <div className="shrink-0">
-                        <LogoComponent setSRC={"/" + MATERIALS.LOGOS.KBS} setClassName="logo-size" />
+                        <LogoComponent setSRC={MATERIALS.LOGOS.KBS} setClassName="logo-size" />
                     </div>
 
                     {/* DASHBOARD TYPE */}

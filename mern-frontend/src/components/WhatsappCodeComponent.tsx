@@ -221,11 +221,11 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                 }`}>
                     {isAdmin?
                         <>
-                            {<MessageComponent setIcon={"/" + MATERIALS.ICONS.ERROR_ICON} setMessage="Not Admin Email"/>}
+                            {<MessageComponent setIcon={MATERIALS.ICONS.ERROR_ICON} setMessage="Not Admin Email"/>}
                         </>
                         :
                         <>
-                            {<MessageComponent setIcon={"/" + MATERIALS.ICONS.ERROR_ICON} setMessage="Incorrect Email"/>}
+                            {<MessageComponent setIcon={MATERIALS.ICONS.ERROR_ICON} setMessage="Incorrect Email"/>}
                         </>
                     }
                 </div>
@@ -236,7 +236,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                     :
                     "max-h-0 opacity-0 -translate-y-10 pointer-events-none"
                 }`}>
-                    {<MessageComponent setIcon={"/" + MATERIALS.ICONS.ERROR_ICON} setMessage="Incorrect OTP"/>}
+                    {<MessageComponent setIcon={MATERIALS.ICONS.ERROR_ICON} setMessage="Incorrect OTP"/>}
                 </div>
 
                 <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
@@ -246,7 +246,7 @@ export default function WhatsappCodeComponent({ page, tab, options, isAdmin}:wpC
                     "max-h-0 opacity-0 -translate-y-10 pointer-events-none"
                 }`}>
                     {otpMessage && (
-                        <MessageComponent setIcon={"/" + MATERIALS.ICONS.CORRECT_ICON} setMessage={otpMessage}/>
+                        <MessageComponent setIcon={MATERIALS.ICONS.CORRECT_ICON} setMessage={otpMessage}/>
                     )}
                 </div>
             </div>

@@ -1,11 +1,6 @@
 import { useState } from "react";
 
-type NewModuleFormProps = {
-  onCancel: () => void;
-  onAddAssessment: () => void;
-};
-
-export default function NewModuleForm({ }: NewModuleFormProps) {
+export default function NewModuleForm() {
 
   const [formData, setFormData] = useState({
     moduleName: "",

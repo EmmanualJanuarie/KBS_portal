@@ -102,14 +102,9 @@ export default function MetricsPane(){
     return (
         <>
             <div className="flex flex-col justify-center items-center gap-14">
-                {/* METRICS TOP SECTION */}
-                <div className="flex bg-white border-to-bottom-gray p-8 w-full justify-center md:justify-end lg:justify-end">
-                    <div className="">
-                        <select name="subject" className="bg-white/95 rounded-2xl lg:p-5 md:p-5 sm:p-5 text-left input-style-1 py-20" required>
-                            <option value={"2025"}>2025</option>
-                            <option value={"2024"}>2024</option>
-                        </select>
-                    </div>
+                {/* Static values are illustrative sample data, not live analytics. */}
+                <div className="flex bg-white border-to-bottom-gray p-8 w-full justify-end">
+                    <span className="text-sm text-gray-600">Sample metrics · illustrative data</span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 justify-center items-center gap-10 md:gap-8 lg:gap-10">

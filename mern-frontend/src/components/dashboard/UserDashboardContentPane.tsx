@@ -6,19 +6,23 @@ import MyCoursesPane from "../panes/user/MyCoursesPane";
 import UserEventPane from "../panes/user/UserEventPane";
 import UserAccountPane from "../panes/user/UserAccountPane";
 import CourseDetailPane from "../panes/user/CourseDetailPane";
+import type { UserDemoCourse } from "../panes/user/MyCoursesPane";
 
 type UserDashboardContentPaneProps = {
   id: string;
+  onSelectSection: (section: string) => void;
+  onSelectCourse: (course: UserDemoCourse) => void;
+  selectedCourse: UserDemoCourse | null;
 };
 
-export default function UserDashboardContentPane({ id }: UserDashboardContentPaneProps) {
+export default function UserDashboardContentPane({ id, onSelectSection, onSelectCourse, selectedCourse }: UserDashboardContentPaneProps) {
 
   const RenderPane = () => {
     switch (id) {
       case "My Courses":
-        return <MyCoursesPane />;
+        return <MyCoursesPane onOpenCourse={(course) => { onSelectCourse(course); onSelectSection("Course Details"); }} />;
       case "Course Details":
-        return <CourseDetailPane />;
+        return <CourseDetailPane course={selectedCourse} />;
       case "Events":
         return <UserEventPane />;
       case "My Account":

@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MATERIALS } from "../../utils/materials";
 
+const NAV_SECTION_IDS = ["", "", "guide", "testimonials", "faqs"];
+
 /**
  * Contains the set tailwind layout structure for the navbar.
  * 
@@ -80,7 +82,7 @@ export default function NavbarComponent({toggleList, setToggleList}: navbarProps
         useEffect(()=>{
             if (!scrolling) return;
 
-            const sections = navitems.map((item) => document.getElementById(item.scrollTo));
+            const sections = NAV_SECTION_IDS.map((id) => id ? document.getElementById(id) : null);
 
             let activeIndex = null;
 
@@ -115,7 +117,7 @@ export default function NavbarComponent({toggleList, setToggleList}: navbarProps
             <div className="flex items-center gap-8 w-full md:flex-1">
             {/* Logo */}
             <div className="shrink-0">
-                <LogoComponent setSRC={"/" + MATERIALS.LOGOS.KBS} setClassName="logo-size" />
+                <LogoComponent setSRC={MATERIALS.LOGOS.KBS} setClassName="logo-size" />
             </div>
 
             {/* Nav Items */}

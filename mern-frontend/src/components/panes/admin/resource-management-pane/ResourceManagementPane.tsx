@@ -32,48 +32,18 @@ export default function ResourceManagementPane() {
 
   /* Load Courses */
   useEffect(() => {
-    const loadData = async () => {
-      setLoading(true);
-
-      setCourses([
-        { id: "1", name: "Cyber Security Basics" },
-        { id: "2", name: "Fire Safety 101" },
-        { id: "3", name: "Office Safety Training" },
-      ]);
-
-      setResources([]);
-      setLoading(false);
-    };
-
-    loadData();
+    setCourses([
+      { id: "1", name: "Startup Fundamentals" },
+      { id: "2", name: "Business Strategy & Growth" },
+      { id: "3", name: "Financial Management for Entrepreneurs" },
+      { id: "4", name: "Marketing & Branding Essentials" },
+      { id: "5", name: "Leadership & Team Building" },
+    ]);
+    setLoading(false);
   }, []);
 
-  const loadCourseResources = async (courseName: string) => {
+  const loadCourseResources = (courseName: string) => {
     setSelectedCourse(courseName);
-    setLoading(true);
-
-    await new Promise((r) => setTimeout(r, 500));
-
-    setResources([
-      {
-        id: "1",
-        courseName,
-        filename: "Safety_Manual.pdf",
-        url: "#",
-        type: "document",
-        uploadedAt: "2025-01-10",
-      },
-      {
-        id: "2",
-        courseName,
-        filename: "TrainingImage.png",
-        url: "#",
-        type: "image",
-        uploadedAt: "2025-01-10",
-      },
-    ]);
-
-    setLoading(false);
   };
 
   /* Detect File Type */
@@ -98,7 +68,7 @@ export default function ResourceManagementPane() {
       courseName: selectedCourse,
       type: detectType(file.name),
       uploadedAt: new Date().toISOString().slice(0, 10),
-      url: "#",
+      url: URL.createObjectURL(file),
     };
 
     setResources((prev) => [...prev, newItem]);
@@ -108,7 +78,11 @@ export default function ResourceManagementPane() {
   /* Delete Resource */
   const handleDelete = async (id: string) => {
     if (!window.confirm("Delete this resource?")) return;
-    setResources((prev) => prev.filter((r) => r.id !== id));
+    setResources((prev) => {
+      const resource = prev.find((item) => item.id === id);
+      if (resource?.url.startsWith("blob:")) URL.revokeObjectURL(resource.url);
+      return prev.filter((r) => r.id !== id);
+    });
   };
 
   return (
@@ -116,6 +90,10 @@ export default function ResourceManagementPane() {
 
       {/* PANEL CARD */}
       <div className="bg-white border rounded-2xl shadow-md p-6 flex flex-col gap-6">
+
+        <p className="text-sm text-gray-600" role="status">
+          Demo only: files stay in this browser session and are not uploaded or saved to a server.
+        </p>
 
         {/* Upload Controls */}
         <div className="flex flex-col md:flex-row gap-4 items-center">
@@ -151,7 +129,7 @@ export default function ResourceManagementPane() {
             <ResourceSkeleton />
           ) : selectedCourse === "" ? (
             <div className="text-gray-500">Select a course to manage its resources.</div>
-          ) : resources.length === 0 ? (
+          ) : resources.filter((resource) => resource.courseName === selectedCourse).length === 0 ? (
             <div className="text-gray-500">No resources found for this course.</div>
           ) : (
             <>
@@ -169,7 +147,7 @@ export default function ResourceManagementPane() {
                   </thead>
 
                   <tbody>
-                    {resources.map((res, index) => (
+                    {resources.filter((resource) => resource.courseName === selectedCourse).map((res, index) => (
                       <tr key={res.id} className="border-t hover:bg-gray-50">
                         <td className="px-4 py-3">{index + 1}</td>
                         <td className="px-4 py-3">{res.filename}</td>
@@ -217,7 +195,7 @@ export default function ResourceManagementPane() {
 
               {/* MOBILE CARDS */}
               <div className="flex flex-col gap-4 md:hidden">
-                {resources.map((res, _) => (
+                {resources.filter((resource) => resource.courseName === selectedCourse).map((res) => (
                   <div
                     key={res.id}
                     className="border rounded-xl shadow-sm p-4 bg-gray-50"

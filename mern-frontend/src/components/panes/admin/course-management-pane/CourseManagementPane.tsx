@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { MATERIALS } from "../../../../../utils/materials";
+import { ASSET_PATH, MATERIALS } from "../../../../../utils/materials";
 import NewCourse from "./modals/NewCourse";
 import CourseCard from "./CourseCard"; // Make sure this points to your CourseCard component
 import CourseCardSkeleton from "../../../skeleton-loaders/CourseCardSkeleton";
 
 export default function CourseManagementPane() {
   const [toggleBtn, setToggleBtn] = useState(false);
+  const [editingCourse, setEditingCourse] = useState<(typeof dummyCourses)[number] | null>(null);
 
   const [loading, setLoading] = useState(true);
           
@@ -22,35 +23,35 @@ const dummyCourses = [
     courseName: "Startup Fundamentals",
     courseDes: "Learn how to validate your business idea, build a minimum viable product, and pitch to investors.",
     courseAuthor: "Elena Roberts",
-    courseImage: "https://picsum.photos/400/200?random=11",
+    courseImage: ASSET_PATH("stickers/customer_service.png"),
   },
   {
     id: 2,
     courseName: "Business Strategy & Growth",
     courseDes: "Master strategic planning, market analysis, and scaling techniques to grow your business successfully.",
     courseAuthor: "Marcus Lee",
-    courseImage: "https://picsum.photos/400/200?random=12",
+    courseImage: ASSET_PATH("stickers/financial_Literacy.png"),
   },
   {
     id: 3,
     courseName: "Financial Management for Entrepreneurs",
     courseDes: "Understand cash flow, budgeting, funding options, and financial decision-making for startups.",
     courseAuthor: "Sophia Patel",
-    courseImage: "https://picsum.photos/400/200?random=13",
+    courseImage: ASSET_PATH("stickers/interview_prep.png"),
   },
   {
     id: 4,
     courseName: "Marketing & Branding Essentials",
     courseDes: "Learn to create powerful marketing strategies, build your brand identity, and attract the right customers.",
     courseAuthor: "David Kim",
-    courseImage: "https://picsum.photos/400/200?random=14",
+    courseImage: ASSET_PATH("stickers/workplace_etiquette.png"),
   },
   {
     id: 5,
     courseName: "Leadership & Team Building",
     courseDes: "Develop essential leadership skills, manage teams effectively, and create a strong company culture.",
     courseAuthor: "Amira Johnson",
-    courseImage: "https://picsum.photos/400/200?random=15",
+    courseImage: ASSET_PATH("stickers/cv_drafting.png"),
   },
 ];
 
@@ -69,6 +70,7 @@ const dummyCourses = [
       icon: MATERIALS.ICONS.ADD_ICON,
       name: "New Course",
       setEvent() {
+        setEditingCourse(null);
         setToggleBtn(!toggleBtn);
       },
     },
@@ -97,8 +99,11 @@ const dummyCourses = [
   };
 
   const handleEditCourse = (id: number) => {
-    console.log("Edit course", id);
-    // You can implement pre-filled editing logic here
+    const courseToEdit = courses.find((course) => course.id === id);
+    if (courseToEdit) {
+      setEditingCourse(courseToEdit);
+      setToggleBtn(true);
+    }
   };
 
   return (
@@ -125,8 +130,17 @@ const dummyCourses = [
       {/* TOGGLE FORM */}
       {toggleBtn && (
         <NewCourse
-          onClose={() => setToggleBtn(false)}
-          onSaveCourse={handleSaveCourse}
+          key={editingCourse?.id ?? "new-course"}
+          initialCourse={editingCourse ?? undefined}
+          onClose={() => { setToggleBtn(false); setEditingCourse(null); }}
+          onSaveCourse={(course) => {
+            if (editingCourse) {
+              setCourses((previous) => previous.map((item) => item.id === editingCourse.id ? { ...item, ...course } : item));
+            } else {
+              handleSaveCourse(course);
+            }
+            setEditingCourse(null);
+          }}
         />
       )}
 

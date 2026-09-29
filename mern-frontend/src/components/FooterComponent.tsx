@@ -10,16 +10,16 @@ export default function FooterComponent(){
 
                 <div className="lg:flex lg:flex-row md:flex md:flex-row sm:flex sm:flex-row lg:gap-20 md:gap-20 sm:gap-10" id="icons">
                     <div className="nav-item shrink-0">
-                        <IconComponent defaultSRC={MATERIALS.ICONS.SOCIAL_MEDIA_X_ICON} link="x.com/kbs" isLinkActive={true} onHoverSRC={MATERIALS.ICONS.SOCIAL_MEDIA_X_ICON} setClassName="w-9"/>
+                        <IconComponent defaultSRC={MATERIALS.ICONS.SOCIAL_MEDIA_X_ICON} link="https://x.com" isLinkActive={true} onHoverSRC={MATERIALS.ICONS.SOCIAL_MEDIA_X_ICON} setClassName="w-9"/>
                     </div>
                     <div className="nav-item shrink-0">
-                        <IconComponent defaultSRC={MATERIALS.ICONS.SOCIAL_MEDIA_INSTA_ICON} link="x.com/kbs" isLinkActive={true} onHoverSRC={MATERIALS.ICONS.SOCIAL_MEDIA_INSTA_ICON} setClassName="w-9"/>
+                        <IconComponent defaultSRC={MATERIALS.ICONS.SOCIAL_MEDIA_INSTA_ICON} link="https://www.instagram.com" isLinkActive={true} onHoverSRC={MATERIALS.ICONS.SOCIAL_MEDIA_INSTA_ICON} setClassName="w-9"/>
                     </div>
                     <div className="nav-item shrink-0">
-                        <IconComponent defaultSRC={MATERIALS.ICONS.SOCIAL_MEDIA_TIKTOK_ICON} link="x.com/kbs" isLinkActive={true} onHoverSRC={MATERIALS.ICONS.SOCIAL_MEDIA_TIKTOK_ICON} setClassName="w-9"/>
+                        <IconComponent defaultSRC={MATERIALS.ICONS.SOCIAL_MEDIA_TIKTOK_ICON} link="https://www.tiktok.com" isLinkActive={true} onHoverSRC={MATERIALS.ICONS.SOCIAL_MEDIA_TIKTOK_ICON} setClassName="w-9"/>
                     </div>
                     <div className="nav-item shrink-0">
-                        <IconComponent defaultSRC={MATERIALS.ICONS.SOCIAL_MEDIA_LINKEDIN_ICON} link="x.com/kbs" isLinkActive={true} onHoverSRC={MATERIALS.ICONS.SOCIAL_MEDIA_LINKEDIN_ICON} setClassName="w-9"/>
+                        <IconComponent defaultSRC={MATERIALS.ICONS.SOCIAL_MEDIA_LINKEDIN_ICON} link="https://www.linkedin.com" isLinkActive={true} onHoverSRC={MATERIALS.ICONS.SOCIAL_MEDIA_LINKEDIN_ICON} setClassName="w-9"/>
                     </div>
                 </div>
                 
@@ -81,7 +81,7 @@ export default function FooterComponent(){
             {/* COPYRIGHT AND VERSIONING SECTION */}
             <div className="md:flex md:flex-row footer-items-gap justify-center">
                 <div className="py-3 text-gray sm:text-center">
-                    © 2025 KBS Portal. All rights reserved. | Version 0.20.1
+                    © 2026 KBS Portal. Portfolio demo | Version 0.29.0
                 </div>
             </div>
         </div>
