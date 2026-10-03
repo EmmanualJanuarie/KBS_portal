@@ -99,9 +99,7 @@ export default function HamburgerNavItemsModal({setClassName, toggleList, setTog
                 <div className="flex items-center gap-0 w-full md:flex-1 justify-center">
                     <div className="flex md:hidden px-2 py-3 items-center">
                         <ButtonComponent name="Admin console" setClassName="btn-type-2" setOnClick={()=>{
-                            setTimeout(()=>{
-                                window.open(ROUTES.ADMIN_PAGE, '_blank');
-                            }, 800)
+                            navigate(ROUTES.ADMIN_PAGE);
                 }} />
                     </div>
                 </div>
@@ -109,9 +107,7 @@ export default function HamburgerNavItemsModal({setClassName, toggleList, setTog
                 <div className="flex items-center gap-0 w-full md:flex-1 justify-center">
                     <div className="flex md:hidden px-2 py-3 items-center">
                         <ButtonComponent name="Contact Support" setClassName="btn-type-2" setOnClick={()=>{
-                            setTimeout(()=>{
-                                window.open(ROUTES.CONTACT_STAFF_PAFE, '_blank');
-                            }, 800)
+                            navigate(ROUTES.CONTACT_STAFF_PAFE);
                         }} />
                     </div>
                 </div>
@@ -119,9 +115,7 @@ export default function HamburgerNavItemsModal({setClassName, toggleList, setTog
                 <div className="flex items-center gap-0 w-full md:flex-1 justify-center">
                     <div className="flex md:hidden px-2 py-3 items-center">
                         <ButtonComponent name="SignIn" setClassName="btn-type-3 btn-w-150"setOnClick={()=>{
-                            setTimeout(()=>{
-                                window.open(ROUTES.USER_PAGE, '_blank');
-                            }, 800)
+                            navigate(ROUTES.USER_PAGE);
                         }}/>
                     </div>
                 </div>
