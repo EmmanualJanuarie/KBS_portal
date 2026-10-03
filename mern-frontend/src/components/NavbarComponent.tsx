@@ -148,19 +148,13 @@ export default function NavbarComponent({toggleList, setToggleList}: navbarProps
             {/* RIGHT SIDE */}
             <div className="flex flex-row gap-4 justify-end">
                 <ButtonComponent name="Admin console" setClassName="btn-type-1" setOnClick={()=>{
-                    setTimeout(()=>{
-                         window.open(ROUTES.ADMIN_PAGE, '_blank');
-                    }, 800)
+                    navigate(ROUTES.ADMIN_PAGE);
                 }}/>
                 <ButtonComponent name="Contact Support" setClassName="btn-type-2" setOnClick={() => {
-                    setTimeout(()=>{
-                        window.open(ROUTES.CONTACT_STAFF_PAFE, '_blank')
-                    }, 800)
+                    navigate(ROUTES.CONTACT_STAFF_PAFE);
                 }}/>
                 <ButtonComponent name="SignIn" setClassName="btn-type-3 btn-w-150" setOnClick={() => {
-                    setTimeout(()=>{
-                        window.open(ROUTES.USER_PAGE, '_blank')
-                    }, 800)
+                    navigate(ROUTES.USER_PAGE);
                 }} />
             </div>
 
